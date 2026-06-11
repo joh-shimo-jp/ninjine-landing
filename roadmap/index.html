@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NINJINE — 開発ロードマップ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== リセット & 変数 ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FAFAF8;
+      --text: #2A2A2A;
+      --text-muted: #6A6A6A;
+      --border: #DDDBD5;
+      --card-bg: #FFFFFF;
+      --header-bg: #F0EDE5;
+      --font: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+      --radius: 6px;
+      --shadow: 0 1px 4px rgba(42,42,42,0.08);
+    }
+
+    /* ===== ベース ===== */
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: underline; }
+    a:hover { opacity: 0.75; }
+
+    /* ===== ヘッダー ===== */
+    .site-header {
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 1.5rem 1.5rem;
+      text-align: center;
+    }
+    .site-header .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .site-header h1 {
+      font-size: clamp(1.1rem, 4vw, 1.5rem);
+      font-weight: 600;
+      margin-top: 0.5rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+    .site-header .meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius);
+      transition: background 0.15s;
+    }
+    .back-link:hover { background: var(--border); opacity: 1; }
+
+    /* ===== メインレイアウト ===== */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* ===== 凡例 ===== */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      padding: 1rem 1.25rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .legend-title {
+      width: 100%;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .legend-item {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid;
+      letter-spacing: 0.03em;
+    }
+
+    /* ===== セクション ===== */
+    .ticket-section {
+      margin-bottom: 2.5rem;
+    }
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--border);
+      color: var(--text);
+    }
+    .section-title .count {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    /* ===== カードグリッド ===== */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    @media (max-width: 540px) {
+      .card-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== カード ===== */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid;
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+    .status-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid;
+      letter-spacing: 0.04em;
+    }
+    .ticket-id {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-family: 'Courier New', monospace;
+    }
+    .date {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+    .card-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 0.4rem;
+    }
+    .summary {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.5rem;
+    }
+    .tag {
+      font-size: 0.65rem;
+      background: #F0EDE5;
+      color: var(--text-muted);
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+    }
+
+    /* ===== ESHINE プレースホルダー ===== */
+    .eshine-roadmap-section {
+      margin-bottom: 2.5rem;
+      padding: 1.25rem;
+      background: var(--card-bg);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .eshine-roadmap-section h2 {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .eshine-roadmap-placeholder {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      /* ESHINE 製巻物ロードマップ画像をここに挿入 (v2) */
+    }
+
+    /* ===== フッター ===== */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .site-footer a {
+      color: var(--text-muted);
+    }
+    .footer-links {
+      margin-bottom: 0.4rem;
+    }
+    .footer-links a {
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo" aria-label="NINJINE トップページ">NINJINE</a>
+    <h1>開発ロードマップ</h1>
+    <p class="meta">Build in Public — 生成日時: 2026-06-11 21:54</p>
+    <a href="../" class="back-link">← トップページへ</a>
+  </header>
+
+  <main>
+    <!-- ===== ステータス凡例 ===== -->
+    <div class="legend" role="complementary" aria-label="ステータス凡例">
+      <p class="legend-title">ステータス凡例 / Status Legend</p>
+      <span class="legend-item" style="background:#F5EDD8;border-color:#C4A882;color:#8B7355">Seed</span>
+<span class="legend-item" style="background:#E8F0F8;border-color:#7AADC8;color:#4A6B8A">Goal</span>
+<span class="legend-item" style="background:#EAF3E0;border-color:#8AB868;color:#5A7A3A">Task</span>
+<span class="legend-item" style="background:#F3E0F0;border-color:#B868A8;color:#7A3A6A">Ship</span>
+<span class="legend-item" style="background:#EDEDED;border-color:#AAAAAA;color:#2A2A2A">Delivered</span>
+    </div>
+
+    <!-- ===== ESHINE ロードマップ画像プレースホルダー ===== -->
+    <!-- ESHINE 製巻物ロードマップ画像統合予定 (v2) -->
+    <section class="eshine-roadmap-section" aria-label="ESHINE ロードマップ統合予定">
+      <h2>ESHINE ビジュアルロードマップ（準備中）</h2>
+      <div class="eshine-roadmap-placeholder">
+        <!-- ESHINE が生成した animated SVG ロードマップ巻物をここに配置 (v2) -->
+        ESHINE 製ロードマップビジュアル（Coming Soon）
+      </div>
+    </section>
+
+    
+  <section class="ticket-section" id="in-progress">
+    <h2 class="section-title">進行中 / In Progress <span class="count">(3)</span></h2>
+    <div class="card-grid">
+      
+    <div class="card" style="border-left-color:#7AADC8">
+      <div class="card-header">
+        <span class="status-badge" style="background:#E8F0F8;color:#4A6B8A;border-color:#7AADC8">Goal</span>
+        <span class="ticket-id">N-BIP-01</span>
+        <span class="date">更新: 2026-06-11</span>
+      </div>
+      <h3 class="card-title">N-BIP-01: 公開チケットスキーマ定義（Build in Public 基盤）</h3>
+      <p class="summary">NINJINE フレームワーク（Seed→Goal→Task→Ship→Deliverable）のチケットを、AI（Claude Code / Cursor）が直接読み書きでき、かつ公開可否を制御できる markdown + frontmatter 形式として定義する。「ファイル形式自体が AI への API」という設計思想の具体化。</p>
+      <div class="tags"><span class="tag">bip</span><span class="tag">schema</span><span class="tag">infra</span></div>
+    </div>
+
+    <div class="card" style="border-left-color:#7AADC8">
+      <div class="card-header">
+        <span class="status-badge" style="background:#E8F0F8;color:#4A6B8A;border-color:#7AADC8">Goal</span>
+        <span class="ticket-id">N-BIP-02</span>
+        <span class="date">更新: 2026-06-11</span>
+      </div>
+      <h3 class="card-title">N-BIP-02: 公開ロードマップページ生成（GitHub Pages）</h3>
+      <p class="summary">`public: true` のチケット群から NINJINE の公開ロードマップ静的ページを自動生成し、GitHub Pages で公開する。**N-LP-01（プロダクト紹介 LP）と同一サイト内に統合**し、LP からロードマップへ導線を張る。アプリ完成を待たず Build in Public の発信を開始できる状態を作る。</p>
+      <div class="tags"><span class="tag">bip</span><span class="tag">github-pages</span><span class="tag">roadmap</span></div>
+    </div>
+
+    <div class="card" style="border-left-color:#7AADC8">
+      <div class="card-header">
+        <span class="status-badge" style="background:#E8F0F8;color:#4A6B8A;border-color:#7AADC8">Goal</span>
+        <span class="ticket-id">N-BIP-04</span>
+        <span class="date">更新: 2026-06-11</span>
+      </div>
+      <h3 class="card-title">N-BIP-04: Ship→SNS 投稿ドラフト生成（Claude Code コマンド）</h3>
+      <p class="summary">ステータスが ship/delivered になったチケットから、進捗報告の SNS 投稿ドラフトを生成する Claude Code コマンド（例: `/publish`）。アプリ内 AI ではなくワークスペース側のコマンドとして実装する点で、Blocked 中の **N-SNS-02（アプリ内投稿支援 UI）とはスコープが異なる**。N-SNS-02 解除</p>
+      <div class="tags"><span class="tag">bip</span><span class="tag">publish</span><span class="tag">sns</span><span class="tag">infra</span></div>
+    </div>
+    </div>
+  </section>
+    
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="../">トップページ</a>
+      <a href="https://x.com/NINJINE000" target="_blank" rel="noopener">X @NINJINE000</a>
+    </div>
+    <p>© 2026 NINJINE — In development</p>
+  </footer>
+</body>
+</html>
