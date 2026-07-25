@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NINJINE — Image → Parts → Animated SVG</title>
+  <title>NINJINE — Company Hub</title>
+  <meta name="description" content="NINJINE — アイデアを形にするプロダクト群。ESHINE（画像→パーツ→アニメーションSVG）、ご飯だよ！（献立アプリ）を開発しています。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
@@ -22,49 +23,62 @@
       padding: 3rem 1.25rem 4rem;
       text-align: center;
     }
-    h1 { font-size: 1.75rem; letter-spacing: 0.12em; margin-bottom: 0.5rem; }
-    .tagline { color: #6A6A6A; font-size: 0.95rem; margin-bottom: 2rem; }
-    .values { text-align: left; margin: 2rem 0; padding: 1.25rem; background: #fff; border: 1px solid #DDDBD5; border-radius: 6px; }
-    .values li { margin: 0.5rem 0; list-style: none; }
-    .values li::before { content: "— "; color: #8B7355; }
-    .cta { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
-    .btn {
-      display: inline-block;
-      padding: 0.65rem 1.25rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      border: 1px solid #2A2A2A;
-      color: #2A2A2A;
-      transition: background 0.15s;
+    h1 { font-size: 1.9rem; letter-spacing: 0.14em; margin-bottom: 0.5rem; }
+    .tagline { color: #6A6A6A; font-size: 0.95rem; margin-bottom: 2.5rem; }
+
+    .products {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 2rem 0;
     }
-    .btn:hover { background: #F0EDE5; }
-    .btn-primary { background: #2A2A2A; color: #FAFAF8; }
-    .btn-primary:hover { background: #444; }
+    .product-card {
+      display: block;
+      text-align: left;
+      padding: 1.25rem 1.4rem;
+      background: #fff;
+      border: 1px solid #DDDBD5;
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .product-card:hover { border-color: #4A3728; background: #FBF9F4; }
+    .product-name {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .product-name .ext-mark { font-size: 0.7rem; color: #8B7355; font-weight: 400; }
+    .product-desc { margin-top: 0.4rem; font-size: 0.88rem; color: #6A6A6A; }
+
     footer { margin-top: 3rem; font-size: 0.78rem; color: #6A6A6A; }
-    .dev-badge { display: inline-block; margin-top: 1rem; font-size: 0.75rem; color: #6A6A6A; border: 1px dashed #DDDBD5; padding: 0.2rem 0.6rem; border-radius: 4px; }
+    footer a { color: #4A3728; }
   </style>
 </head>
 <body>
   <main>
     <h1>NINJINE</h1>
-    <p class="tagline">Image → Parts → Animated SVG</p>
-    <p class="dev-badge">Now in development</p>
+    <p class="tagline">アイデアを形にするプロダクト群</p>
 
-    <ul class="values">
-      <li>画像からパーツを切り出し、アニメーション付き SVG を作るワークフロー</li>
-      <li>NINJINE の UI は ESHINE で制作</li>
-      <li>Seed → Goal → Task → Ship — Build in Public で開発中</li>
-    </ul>
+    <div class="products">
+      <a class="product-card" href="https://joh-shimo-jp.github.io/eshine-landing/" target="_blank" rel="noopener">
+        <div class="product-name">ESHINE <span class="ext-mark">↗ 外部サイト</span></div>
+        <p class="product-desc">画像 → パーツ切り出し → アニメーション付き SVG を生成するコンポーネントエディタ。</p>
+      </a>
 
-    <div class="cta">
-      <a class="btn btn-primary" href="roadmap/">開発ロードマップを見る</a>
-      <a class="btn" href="https://x.com/NINJINE000" target="_blank" rel="noopener">X @NINJINE000 をフォロー</a>
+      <a class="product-card" href="meal/">
+        <div class="product-name">ご飯だよ！</div>
+        <p class="product-desc">今日の献立を決めるお手伝い。シンプルな献立管理アプリ。</p>
+      </a>
     </div>
 
     <footer>
-      <p>© 2026 NINJINE — In development</p>
-      <p>Support: <a href="https://x.com/NINJINE000">@NINJINE000</a></p>
+      <p>© 2026 NINJINE</p>
+      <p><a href="https://x.com/NINJINE000" target="_blank" rel="noopener">X @NINJINE000</a></p>
     </footer>
   </main>
 </body>

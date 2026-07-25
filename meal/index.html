@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ご飯だよ！ — 今日の献立、決めよう</title>
+  <meta name="description" content="ご飯だよ！は、今日の献立を決めるお手伝いをするシンプルな献立管理アプリです。NINJINE 開発。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+      background: #FAFAF8;
+      color: #2A2A2A;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+      text-align: center;
+    }
+    .icon {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 1.25rem;
+      display: block;
+    }
+    h1 { font-size: 1.9rem; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .tagline { color: #6A6A6A; font-size: 0.95rem; margin-bottom: 2rem; }
+    .dev-badge { display: inline-block; margin-bottom: 1.5rem; font-size: 0.75rem; color: #6A6A6A; border: 1px dashed #DDDBD5; padding: 0.2rem 0.6rem; border-radius: 4px; }
+
+    .values { text-align: left; margin: 2rem 0; padding: 1.25rem 1.4rem; background: #fff; border: 1px solid #DDDBD5; border-radius: 8px; }
+    .values li { margin: 0.5rem 0; list-style: none; }
+    .values li::before { content: "— "; color: #8B7355; }
+
+    .cta { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.25rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 1px solid #2A2A2A;
+      color: #2A2A2A;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: #F0EDE5; }
+
+    footer { margin-top: 3rem; font-size: 0.78rem; color: #6A6A6A; }
+    footer a { color: #4A3728; }
+    .back-link { display: inline-block; margin-top: 0.75rem; font-size: 0.8rem; color: #6A6A6A; text-decoration: none; }
+    .back-link:hover { color: #4A3728; }
+  </style>
+</head>
+<body>
+  <main>
+    <svg class="icon" viewBox="0 0 96 96" role="img" aria-label="ご飯だよ！ アイコン">
+      <circle cx="48" cy="48" r="46" fill="#FAFAF8" stroke="#2A2A2A" stroke-width="2"/>
+      <path d="M20 46 C20 46 22 68 48 68 C74 68 76 46 76 46 Z" fill="#4A3728"/>
+      <path d="M20 46 C20 46 22 44 48 44 C74 44 76 46 76 46 Z" fill="#2A2A2A"/>
+      <ellipse cx="48" cy="38" rx="22" ry="12" fill="#FAFAF8" stroke="#2A2A2A" stroke-width="2"/>
+      <path d="M40 30 Q44 26 48 30 Q52 26 56 30" stroke="#8B7355" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <line x1="66" y1="24" x2="74" y2="12" stroke="#2A2A2A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="70" y1="28" x2="80" y2="18" stroke="#2A2A2A" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+
+    <h1>ご飯だよ！</h1>
+    <p class="tagline">今日の献立、決めよう。</p>
+    <p class="dev-badge">Now in development</p>
+
+    <ul class="values">
+      <li>今日は何を作ろう、を毎日悩まなくていい献立管理アプリ</li>
+      <li>シンプルな記録・提案で、日々の「ご飯だよ！」を後押し</li>
+      <li>NINJINE が開発中のプロダクトの一つ</li>
+    </ul>
+
+    <div class="cta">
+      <a class="btn" href="mailto:joh.shimo.jp@gmail.com?subject=%E3%81%94%E9%A3%AF%E3%81%A0%E3%82%88%EF%BC%81%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">お問い合わせ（Support）</a>
+    </div>
+
+    <footer>
+      <p>© 2026 NINJINE — ご飯だよ！ In development</p>
+      <p>Support: <a href="mailto:joh.shimo.jp@gmail.com">joh.shimo.jp@gmail.com</a></p>
+      <a class="back-link" href="../">← NINJINE トップへ戻る</a>
+    </footer>
+  </main>
+</body>
+</html>
