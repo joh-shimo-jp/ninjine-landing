@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Cards fill the canvas; each card is one horizontal color band (not vertical columns). -->
+  <defs>
+    <linearGradient id="row1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFC48A"/><stop offset="100%" stop-color="#FF7A2E"/>
+    </linearGradient>
+    <linearGradient id="row2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B8D0FF"/><stop offset="100%" stop-color="#3F78F0"/>
+    </linearGradient>
+    <linearGradient id="row3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9AE8BC"/><stop offset="100%" stop-color="#1FA85A"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0.15" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="35%" stop-color="#9AA3B0"/>
+      <stop offset="100%" stop-color="#2E3642"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#1A2030" flood-opacity="0.28"/>
+    </filter>
+    <filter id="plateShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#8A7355" flood-opacity="0.22"/>
+    </filter>
+
+    <!-- fork/spoon: ESHINE smoothed (200x444) -->
+    <g id="forkFull">
+      <g transform="matrix(1.262406 0 0 1.262406 -231.737 -400.421)">
+        <path d="M 230.25 331.45 L 231.75 332.20 L 233.06 337.83 L 234.19 348.34 L 235.12 363.73 L 235.88 384.00 L 237.00 399.01 L 238.50 408.77 L 240.38 413.27 L 242.62 412.52 L 244.31 407.08 L 245.44 396.95 L 246.00 382.12 L 246.00 362.61 L 246.56 347.97 L 247.69 338.21 L 249.38 333.33 L 251.62 333.33 L 253.31 338.02 L 254.44 347.41 L 255.00 361.48 L 255.00 380.25 L 255.38 394.70 L 256.12 404.83 L 257.25 410.65 L 258.75 412.15 L 260.25 412.90 L 261.75 412.90 L 263.25 412.15 L 264.75 410.65 L 265.88 404.83 L 266.62 394.70 L 267.00 380.25 L 267.00 361.48 L 267.56 347.41 L 268.69 338.02 L 270.38 333.33 L 272.62 333.33 L 274.50 338.40 L 276.00 348.53 L 277.12 363.73 L 277.88 384.00 L 279.00 398.82 L 280.50 408.21 L 282.38 412.15 L 284.62 410.65 L 286.31 404.83 L 287.44 394.70 L 288.00 380.25 L 288.00 361.48 L 288.38 347.22 L 289.12 337.46 L 290.25 332.20 L 291.75 331.45 L 293.25 331.45 L 294.75 332.20 L 296.25 333.70 L 297.75 335.95 L 299.25 342.52 L 300.75 353.41 L 302.25 368.61 L 303.75 388.13 L 304.31 404.27 L 303.94 417.03 L 302.62 426.42 L 300.38 432.42 L 297.19 438.43 L 293.06 444.43 L 288.00 450.44 L 282.00 456.44 L 277.88 472.21 L 275.62 497.73 L 275.25 533.02 L 276.75 578.06 L 277.12 612.41 L 276.38 636.06 L 274.50 649.01 L 271.50 651.26 L 268.50 652.95 L 265.50 654.08 L 262.50 654.64 L 259.50 654.64 L 256.50 653.89 L 253.50 652.39 L 250.50 650.14 L 247.50 647.13 L 245.62 633.81 L 244.88 610.16 L 245.25 576.19 L 246.75 531.89 L 246.00 496.42 L 243.00 469.77 L 237.75 451.94 L 230.25 442.93 L 225.00 430.17 L 222.00 413.65 L 221.25 393.39 L 222.75 369.36 L 230.25 331.45 Z" fill="url(#steel)" stroke="#1F2733" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" paint-order="stroke fill"/>
+      </g>
+    </g>
+    <g id="spoonFull">
+      <g transform="matrix(1.268313 0 0 1.268313 -1482.856 -400.481)">
+        <path d="M 1249.12 329.95 L 1252.87 330.70 L 1256.53 332.06 L 1260.09 334.03 L 1263.56 336.61 L 1266.93 339.80 L 1270.22 343.60 L 1273.40 348.01 L 1276.50 353.03 L 1279.50 358.66 L 1282.12 364.11 L 1284.38 369.36 L 1286.25 374.43 L 1287.75 379.31 L 1288.88 384.00 L 1289.63 388.50 L 1290.00 392.82 L 1290.00 396.95 L 1289.91 400.84 L 1289.72 404.50 L 1289.44 407.93 L 1289.06 411.12 L 1288.59 414.08 L 1288.03 416.80 L 1287.37 419.29 L 1286.62 421.54 L 1285.55 424.07 L 1284.14 426.89 L 1282.41 429.99 L 1280.34 433.36 L 1277.95 437.02 L 1275.24 440.96 L 1272.19 445.19 L 1268.81 449.69 L 1266.00 456.40 L 1263.75 465.31 L 1262.07 476.43 L 1260.94 489.76 L 1260.38 505.29 L 1260.38 523.03 L 1260.94 542.97 L 1262.07 565.12 L 1262.82 584.68 L 1263.19 601.67 L 1263.19 616.07 L 1262.82 627.90 L 1262.07 637.14 L 1260.94 643.80 L 1259.44 647.89 L 1257.57 649.39 L 1255.64 650.51 L 1253.68 651.26 L 1251.66 651.64 L 1249.60 651.64 L 1247.49 651.26 L 1245.33 650.51 L 1243.13 649.39 L 1240.88 647.88 L 1238.95 643.71 L 1237.36 636.86 L 1236.09 627.33 L 1235.16 615.13 L 1234.55 600.26 L 1234.27 582.71 L 1234.31 562.49 L 1234.69 539.59 L 1234.69 519.18 L 1234.31 501.26 L 1233.56 485.82 L 1232.44 472.87 L 1230.94 462.41 L 1229.06 454.43 L 1226.81 448.94 L 1224.19 445.94 L 1221.75 442.98 L 1219.50 440.07 L 1217.44 437.21 L 1215.56 434.40 L 1213.88 431.63 L 1212.38 428.90 L 1211.06 426.23 L 1209.94 423.60 L 1208.95 420.64 L 1208.11 417.36 L 1207.41 413.74 L 1206.84 409.80 L 1206.42 405.53 L 1206.14 400.93 L 1206.00 396.01 L 1206.00 390.75 L 1206.09 385.87 L 1206.28 381.37 L 1206.56 377.24 L 1206.94 373.49 L 1207.41 370.11 L 1207.97 367.11 L 1208.62 364.48 L 1209.38 362.23 L 1210.36 359.88 L 1211.58 357.44 L 1213.03 354.91 L 1214.72 352.28 L 1216.64 349.56 L 1218.80 346.75 L 1221.19 343.84 L 1223.81 340.83 L 1249.12 329.95 Z" fill="url(#steel)" stroke="#1F2733" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" paint-order="stroke fill"/>
+      </g>
+    </g>
+
+    <!-- dish: wide canvas 672x444 so it can spill into F/S columns -->
+    <g id="dishFull">
+      <g filter="url(#plateShadow)">
+        <circle cx="336" cy="222" r="210" fill="#E5D7C4"/>
+        <circle cx="336" cy="222" r="196" fill="#FFF9F1" stroke="#C4AE90" stroke-width="7"/>
+        <circle cx="336" cy="222" r="132" fill="none" stroke="#D4C2A8" stroke-width="10"/>
+        <ellipse cx="286" cy="168" rx="48" ry="58" fill="#FFFFFF" fill-opacity="0.38"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- Plain canvas (no ambient decoration) so cards can fill the icon -->
+  <rect width="1024" height="1024" fill="#E6E2DC"/>
+
+  <!-- CARD 1: orange row -->
+  <g filter="url(#shadow)" transform="translate(52 56)">
+    <rect width="900" height="284" rx="36" fill="url(#row1)" stroke="#FFFFFF" stroke-width="6"/>
+    <svg x="28" y="28" width="844" height="228" viewBox="0 0 672 148"><use xlink:href="#dishFull"/></svg>
+    <svg x="28" y="28" width="250" height="228" viewBox="0 0 200 148"><use xlink:href="#forkFull"/></svg>
+    <svg x="622" y="28" width="250" height="228" viewBox="0 0 200 148"><use xlink:href="#spoonFull"/></svg>
+  </g>
+
+  <!-- CARD 2: blue row, shifted -->
+  <g filter="url(#shadow)" transform="translate(100 370)">
+    <rect width="900" height="284" rx="36" fill="url(#row2)" stroke="#FFFFFF" stroke-width="6"/>
+    <svg x="28" y="28" width="844" height="228" viewBox="0 148 672 148"><use xlink:href="#dishFull"/></svg>
+    <svg x="28" y="28" width="250" height="228" viewBox="0 148 200 148"><use xlink:href="#forkFull"/></svg>
+    <svg x="622" y="28" width="250" height="228" viewBox="0 148 200 148"><use xlink:href="#spoonFull"/></svg>
+  </g>
+
+  <!-- CARD 3: green row -->
+  <g filter="url(#shadow)" transform="translate(52 684)">
+    <rect width="900" height="284" rx="36" fill="url(#row3)" stroke="#FFFFFF" stroke-width="6"/>
+    <svg x="28" y="28" width="844" height="228" viewBox="0 296 672 148"><use xlink:href="#dishFull"/></svg>
+    <svg x="28" y="28" width="250" height="228" viewBox="0 296 200 148"><use xlink:href="#forkFull"/></svg>
+    <svg x="622" y="28" width="250" height="228" viewBox="0 296 200 148"><use xlink:href="#spoonFull"/></svg>
+  </g>
+</svg>

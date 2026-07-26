@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ご飯だよ！ — 今日の献立、決めよう</title>
   <meta name="description" content="ご飯だよ！は、今日の献立を決めるお手伝いをするシンプルな献立管理アプリです。NINJINE 開発。">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
@@ -24,10 +26,12 @@
       text-align: center;
     }
     .icon {
-      width: 96px;
-      height: 96px;
+      width: 112px;
+      height: 112px;
       margin: 0 auto 1.25rem;
       display: block;
+      border-radius: 24px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
     }
     h1 { font-size: 1.9rem; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
     .tagline { color: #6A6A6A; font-size: 0.95rem; margin-bottom: 2rem; }
@@ -58,15 +62,7 @@
 </head>
 <body>
   <main>
-    <svg class="icon" viewBox="0 0 96 96" role="img" aria-label="ご飯だよ！ アイコン">
-      <circle cx="48" cy="48" r="46" fill="#FAFAF8" stroke="#2A2A2A" stroke-width="2"/>
-      <path d="M20 46 C20 46 22 68 48 68 C74 68 76 46 76 46 Z" fill="#4A3728"/>
-      <path d="M20 46 C20 46 22 44 48 44 C74 44 76 46 76 46 Z" fill="#2A2A2A"/>
-      <ellipse cx="48" cy="38" rx="22" ry="12" fill="#FAFAF8" stroke="#2A2A2A" stroke-width="2"/>
-      <path d="M40 30 Q44 26 48 30 Q52 26 56 30" stroke="#8B7355" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <line x1="66" y1="24" x2="74" y2="12" stroke="#2A2A2A" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="70" y1="28" x2="80" y2="18" stroke="#2A2A2A" stroke-width="2.5" stroke-linecap="round"/>
-    </svg>
+    <img class="icon" src="assets/app_icon_1024.png" width="112" height="112" alt="ご飯だよ！ アイコン">
 
     <h1>ご飯だよ！</h1>
     <p class="tagline">今日の献立、決めよう。</p>
