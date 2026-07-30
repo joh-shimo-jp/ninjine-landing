@@ -34,12 +34,102 @@
       box-shadow: 0 10px 28px rgba(0,0,0,0.12);
     }
     h1 { font-size: 1.9rem; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
-    .tagline { color: #6A6A6A; font-size: 0.95rem; margin-bottom: 2rem; }
-    .dev-badge { display: inline-block; margin-bottom: 1.5rem; font-size: 0.75rem; color: #6A6A6A; border: 1px dashed #DDDBD5; padding: 0.2rem 0.6rem; border-radius: 4px; }
+    .tagline { color: #6A6A6A; font-size: 0.95rem; margin-bottom: 1rem; }
+    .dev-badge {
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-size: 0.75rem;
+      color: #6A6A6A;
+      border: 1px dashed #DDDBD5;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
 
-    .values { text-align: left; margin: 2rem 0; padding: 1.25rem 1.4rem; background: #fff; border: 1px solid #DDDBD5; border-radius: 8px; }
-    .values li { margin: 0.5rem 0; list-style: none; }
+    .section {
+      text-align: left;
+      margin: 2.25rem 0;
+      padding: 1.4rem 1.4rem 1.5rem;
+      background: #fff;
+      border: 1px solid #DDDBD5;
+      border-radius: 8px;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: #8B7355;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+    .section h2 {
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    .section p { color: #4A4A4A; font-size: 0.95rem; }
+    .section p + p { margin-top: 0.75rem; }
+
+    .steps { list-style: none; margin-top: 0.5rem; }
+    .steps li {
+      display: grid;
+      grid-template-columns: 1.75rem 1fr;
+      gap: 0.65rem;
+      align-items: start;
+      margin: 0.85rem 0;
+      font-size: 0.95rem;
+      color: #4A4A4A;
+    }
+    .steps .n {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      border: 1px solid #8B7355;
+      color: #8B7355;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      margin-top: 0.15rem;
+    }
+
+    .values { list-style: none; }
+    .values li { margin: 0.55rem 0; color: #4A4A4A; font-size: 0.95rem; }
     .values li::before { content: "— "; color: #8B7355; }
+
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .shot {
+      margin: 0;
+      text-align: center;
+    }
+    .shot img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      background: #F0EDE5;
+    }
+    .shot figcaption {
+      margin-top: 0.45rem;
+      font-size: 0.72rem;
+      color: #6A6A6A;
+    }
+    .shot-note {
+      margin-top: 0.9rem;
+      font-size: 0.78rem;
+      color: #9A9A9A;
+      text-align: center;
+    }
+
+    @media (max-width: 520px) {
+      .shots { grid-template-columns: 1fr; max-width: 220px; margin-left: auto; margin-right: auto; }
+    }
 
     .cta { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
     .btn {
@@ -68,11 +158,70 @@
     <p class="tagline">今日の献立、決めよう。</p>
     <p class="dev-badge">Coming soon</p>
 
-    <ul class="values">
-      <li>主菜・副菜・汁物を組み合わせる着せ替えノート式の献立コンビネーター</li>
-      <li>レシピの保存・削除、外部URLの登録で自分好みの献立ライブラリを育てる</li>
-      <li>NINJINE が開発するプロダクトの一つ</li>
-    </ul>
+    <section class="section" aria-labelledby="about-title">
+      <p class="section-label">About</p>
+      <h2 id="about-title">こんなアプリです</h2>
+      <p>
+        「今日のご飯、どうしよう」を毎日考えなくていいようにする、着せ替えノート式の献立アプリです。
+        主菜・副菜・汁物を組み合わせて、その日の一膳を組み立てます。
+      </p>
+      <p>
+        自分のレシピを溜め、必要なら外部のレシピページへのリンクも残せます。
+        公開レシピから気になる一品を取り込むこともできます（アカウント・プレミアム機能）。
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="howto-title">
+      <p class="section-label">How to use</p>
+      <h2 id="howto-title">使い方</h2>
+      <ol class="steps">
+        <li>
+          <span class="n" aria-hidden="true">1</span>
+          <span>レシピを登録する（材料・手順・任意の外部URL）</span>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">2</span>
+          <span>献立ボードで主菜・副菜・汁物を組み合わせる</span>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">3</span>
+          <span>今日の一膳が決まったら、そのまま調理へ</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="features-title">
+      <p class="section-label">Features</p>
+      <h2 id="features-title">できること</h2>
+      <ul class="values">
+        <li>主菜・副菜・汁物の献立コンビネーター</li>
+        <li>レシピの保存・削除、外部URLの登録</li>
+        <li>公開レシピの閲覧・取得（プレミアム）</li>
+        <li>NINJINE が開発するプロダクトの一つ</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="shots-title">
+      <p class="section-label">Screenshots</p>
+      <h2 id="shots-title">画面イメージ</h2>
+      <!-- 差し替え: assets/screenshots/placeholder-*.svg を実機スクショ PNG に置き換え、
+           下記 src を board.png / recipes.png / detail.png 等へ変更してください。 -->
+      <div class="shots">
+        <figure class="shot">
+          <img src="assets/screenshots/placeholder-board.svg" width="390" height="844" alt="献立ボード画面（プレースホルダー）">
+          <figcaption>献立ボード</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/screenshots/placeholder-recipes.svg" width="390" height="844" alt="レシピ一覧画面（プレースホルダー）">
+          <figcaption>レシピ一覧</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/screenshots/placeholder-detail.svg" width="390" height="844" alt="レシピ詳細画面（プレースホルダー）">
+          <figcaption>レシピ詳細</figcaption>
+        </figure>
+      </div>
+      <p class="shot-note">※ 画像はプレースホルダーです。実機スクリーンショットに差し替え予定。</p>
+    </section>
 
     <div class="cta">
       <a class="btn" href="mailto:joh.shimo.jp@gmail.com?subject=%E3%81%94%E9%A3%AF%E3%81%A0%E3%82%88%EF%BC%81%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">お問い合わせ（Support）</a>
