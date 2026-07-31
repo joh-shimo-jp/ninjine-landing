@@ -69,17 +69,24 @@
     .section p { color: #4A4A4A; font-size: 0.95rem; }
     .section p + p { margin-top: 0.75rem; }
 
-    .steps { list-style: none; margin-top: 0.5rem; }
-    .steps li {
+    /* How to use — ESHINE風ステップ＋画像 */
+    .workflow {
+      list-style: none;
+      margin-top: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .step {
+      margin: 0;
+    }
+    .step-header {
       display: grid;
       grid-template-columns: 1.75rem 1fr;
       gap: 0.65rem;
       align-items: start;
-      margin: 0.85rem 0;
-      font-size: 0.95rem;
-      color: #4A4A4A;
     }
-    .steps .n {
+    .step .n {
       width: 1.5rem;
       height: 1.5rem;
       border-radius: 50%;
@@ -91,6 +98,45 @@
       justify-content: center;
       line-height: 1;
       margin-top: 0.15rem;
+    }
+    .step-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2A2A2A;
+      margin-bottom: 0.25rem;
+    }
+    .step-desc {
+      font-size: 0.9rem;
+      color: #4A4A4A;
+    }
+    .step-visual {
+      margin: 0.85rem 0 0 2.4rem;
+      text-align: center;
+    }
+    .step-visual img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+      background: #F0EDE5;
+    }
+    .step-visual--wide img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    .step-visual figcaption {
+      margin-top: 0.45rem;
+      font-size: 0.72rem;
+      color: #6A6A6A;
+    }
+    .step-connector {
+      width: 1px;
+      height: 1.25rem;
+      background: #DDDBD5;
+      margin: 0.65rem 0 0.65rem 0.7rem;
     }
 
     .values { list-style: none; }
@@ -123,40 +169,6 @@
       color: #9A9A9A;
     }
 
-    .shots {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-    .shot {
-      margin: 0;
-      text-align: center;
-    }
-    .shot img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      background: #F0EDE5;
-    }
-    .shot figcaption {
-      margin-top: 0.45rem;
-      font-size: 0.72rem;
-      color: #6A6A6A;
-    }
-    .shot-note {
-      margin-top: 0.9rem;
-      font-size: 0.78rem;
-      color: #9A9A9A;
-      text-align: center;
-    }
-
-    @media (max-width: 520px) {
-      .shots { grid-template-columns: 1fr; max-width: 220px; margin-left: auto; margin-right: auto; }
-    }
-
     .cta { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
     .btn {
       display: inline-block;
@@ -174,6 +186,12 @@
     footer a { color: #4A3728; }
     .back-link { display: inline-block; margin-top: 0.75rem; font-size: 0.8rem; color: #6A6A6A; text-decoration: none; }
     .back-link:hover { color: #4A3728; }
+
+    @media (max-width: 520px) {
+      .step-visual { margin-left: 0; }
+      .step-visual img { max-width: 220px; }
+      .step-visual--wide img { max-width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -200,20 +218,71 @@
     <section class="section" aria-labelledby="howto-title">
       <p class="section-label">How to use</p>
       <h2 id="howto-title">使い方</h2>
-      <ol class="steps">
-        <li>
-          <span class="n" aria-hidden="true">1</span>
-          <span>レシピを登録する（材料・手順・任意の外部URL）</span>
-        </li>
-        <li>
-          <span class="n" aria-hidden="true">2</span>
-          <span>献立ボードで主菜・副菜・汁物を組み合わせる</span>
-        </li>
-        <li>
-          <span class="n" aria-hidden="true">3</span>
-          <span>今日の一膳が決まったら、そのまま調理へ</span>
-        </li>
-      </ol>
+      <div class="workflow" role="list">
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">1</span>
+            <div>
+              <p class="step-name">レシピを溜める</p>
+              <p class="step-desc">Myレシピに一品ずつ登録。カテゴリやタグで絞り込みもできます。</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="assets/screenshots/recipes.png" width="390" height="844" alt="レシピ一覧画面">
+            <figcaption>レシピ一覧</figcaption>
+          </figure>
+        </article>
+
+        <div class="step-connector" aria-hidden="true"></div>
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">2</span>
+            <div>
+              <p class="step-name">材料と手順を整える</p>
+              <p class="step-desc">食材・分量・手順・タイマーを編集。外部レシピURLも残せます。</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="assets/screenshots/detail.png" width="390" height="844" alt="レシピ詳細画面">
+            <figcaption>レシピ詳細</figcaption>
+          </figure>
+        </article>
+
+        <div class="step-connector" aria-hidden="true"></div>
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">3</span>
+            <div>
+              <p class="step-name">今日の献立を組み合わせる</p>
+              <p class="step-desc">主菜・副菜・汁物をボード上で選んで、その日の一膳を組み立てます。</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="assets/screenshots/board.png" width="390" height="844" alt="今日の献立ボード画面">
+            <figcaption>今日の献立</figcaption>
+          </figure>
+        </article>
+
+        <div class="step-connector" aria-hidden="true"></div>
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">4</span>
+            <div>
+              <p class="step-name">まとめて調理する</p>
+              <p class="step-desc">横画面の調理セッションで、複数品の手順とタイマーを同時に進めます。</p>
+            </div>
+          </div>
+          <figure class="step-visual step-visual--wide">
+            <img src="assets/screenshots/cooking.png" width="844" height="390" alt="調理セッション画面（横向き）">
+            <figcaption>調理セッション</figcaption>
+          </figure>
+        </article>
+
+      </div>
     </section>
 
     <section class="section" aria-labelledby="features-title">
@@ -222,6 +291,7 @@
       <ul class="values">
         <li>主菜・副菜・汁物の献立コンビネーター</li>
         <li>レシピの保存・削除、外部URLの登録</li>
+        <li>横画面の調理セッション（複数品の同時進行）</li>
         <li>公開レシピの閲覧・取得（プレミアム）</li>
         <li>NINJINE が開発するプロダクトの一つ</li>
       </ul>
@@ -274,28 +344,6 @@
         </tbody>
       </table>
       <p class="plan-note">※ App Store アプリ内課金。価格は変更される場合があります。</p>
-    </section>
-
-    <section class="section" aria-labelledby="shots-title">
-      <p class="section-label">Screenshots</p>
-      <h2 id="shots-title">画面イメージ</h2>
-      <!-- 差し替え: assets/screenshots/placeholder-*.svg を実機スクショ PNG に置き換え、
-           下記 src を board.png / recipes.png / detail.png 等へ変更してください。 -->
-      <div class="shots">
-        <figure class="shot">
-          <img src="assets/screenshots/placeholder-board.svg" width="390" height="844" alt="献立ボード画面（プレースホルダー）">
-          <figcaption>献立ボード</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="assets/screenshots/placeholder-recipes.svg" width="390" height="844" alt="レシピ一覧画面（プレースホルダー）">
-          <figcaption>レシピ一覧</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="assets/screenshots/placeholder-detail.svg" width="390" height="844" alt="レシピ詳細画面（プレースホルダー）">
-          <figcaption>レシピ詳細</figcaption>
-        </figure>
-      </div>
-      <p class="shot-note">※ 画像はプレースホルダーです。実機スクリーンショットに差し替え予定。</p>
     </section>
 
     <div class="cta">
