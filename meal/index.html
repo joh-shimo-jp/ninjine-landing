@@ -97,6 +97,32 @@
     .values li { margin: 0.55rem 0; color: #4A4A4A; font-size: 0.95rem; }
     .values li::before { content: "— "; color: #8B7355; }
 
+    .plan-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .plan-table th,
+    .plan-table td {
+      border: 1px solid #DDDBD5;
+      padding: 0.55rem 0.7rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    .plan-table th {
+      background: #F7F4EE;
+      color: #4A3728;
+      font-weight: 600;
+      width: 28%;
+    }
+    .plan-table td { color: #4A4A4A; }
+    .plan-note {
+      margin-top: 0.85rem;
+      font-size: 0.78rem;
+      color: #9A9A9A;
+    }
+
     .shots {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -199,6 +225,55 @@
         <li>公開レシピの閲覧・取得（プレミアム）</li>
         <li>NINJINE が開発するプロダクトの一つ</li>
       </ul>
+    </section>
+
+    <section class="section" aria-labelledby="premium-title">
+      <p class="section-label">Premium</p>
+      <h2 id="premium-title">無料とプレミアム</h2>
+      <p>
+        基本の献立づくりは無料で使えます。公開レシピの共有機能と広告なし体験はプレミアム（サブスク）です。
+      </p>
+      <table class="plan-table">
+        <thead>
+          <tr>
+            <th scope="col">区分</th>
+            <th scope="col">内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">無料</th>
+            <td>レシピ登録・献立ボード・調理。ローカル中心で利用できます。</td>
+          </tr>
+          <tr>
+            <th scope="row">プレミアム</th>
+            <td>広告なし／公開レシピの閲覧・取得／自分のレシピ公開（アカウント必須）</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="plan-table">
+        <thead>
+          <tr>
+            <th scope="col">プラン</th>
+            <th scope="col">料金</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">月額</th>
+            <td>¥250</td>
+          </tr>
+          <tr>
+            <th scope="row">年額</th>
+            <td>¥2,500</td>
+          </tr>
+          <tr>
+            <th scope="row">トライアル</th>
+            <td>7日間</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="plan-note">※ App Store アプリ内課金。価格は変更される場合があります。</p>
     </section>
 
     <section class="section" aria-labelledby="shots-title">
