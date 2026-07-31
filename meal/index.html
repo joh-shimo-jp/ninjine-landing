@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ご飯だよ！ — 今日の献立、決めよう</title>
-  <meta name="description" content="ご飯だよ！は、今日の献立を決めるお手伝いをするシンプルな献立管理アプリです。NINJINE 開発。">
+  <meta name="description" content="ご飯だよ！は、主菜・副菜・汁物を組み合わせて今日の献立を決める着せ替えノート式の献立アプリです。NINJINE 開発。">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,12 +34,140 @@
       box-shadow: 0 10px 28px rgba(0,0,0,0.12);
     }
     h1 { font-size: 1.9rem; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
-    .tagline { color: #6A6A6A; font-size: 0.95rem; margin-bottom: 2rem; }
-    .dev-badge { display: inline-block; margin-bottom: 1.5rem; font-size: 0.75rem; color: #6A6A6A; border: 1px dashed #DDDBD5; padding: 0.2rem 0.6rem; border-radius: 4px; }
+    .tagline { color: #6A6A6A; font-size: 0.95rem; margin-bottom: 1rem; }
+    .dev-badge {
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-size: 0.75rem;
+      color: #6A6A6A;
+      border: 1px dashed #DDDBD5;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
 
-    .values { text-align: left; margin: 2rem 0; padding: 1.25rem 1.4rem; background: #fff; border: 1px solid #DDDBD5; border-radius: 8px; }
-    .values li { margin: 0.5rem 0; list-style: none; }
+    .section {
+      text-align: left;
+      margin: 2.25rem 0;
+      padding: 1.4rem 1.4rem 1.5rem;
+      background: #fff;
+      border: 1px solid #DDDBD5;
+      border-radius: 8px;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: #8B7355;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+    .section h2 {
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    .section p { color: #4A4A4A; font-size: 0.95rem; }
+    .section p + p { margin-top: 0.75rem; }
+
+    /* How to use — ESHINE風ステップ＋画像 */
+    .workflow {
+      list-style: none;
+      margin-top: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .step {
+      margin: 0;
+    }
+    .step-header {
+      display: grid;
+      grid-template-columns: 1.75rem 1fr;
+      gap: 0.65rem;
+      align-items: start;
+    }
+    .step .n {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      border: 1px solid #8B7355;
+      color: #8B7355;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      margin-top: 0.15rem;
+    }
+    .step-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2A2A2A;
+      margin-bottom: 0.25rem;
+    }
+    .step-desc {
+      font-size: 0.9rem;
+      color: #4A4A4A;
+    }
+    .step-visual {
+      margin: 0.85rem 0 0 2.4rem;
+      text-align: center;
+    }
+    .step-visual img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+      background: #F0EDE5;
+    }
+    .step-visual--wide img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    .step-visual figcaption {
+      margin-top: 0.45rem;
+      font-size: 0.72rem;
+      color: #6A6A6A;
+    }
+    .step-connector {
+      width: 1px;
+      height: 1.25rem;
+      background: #DDDBD5;
+      margin: 0.65rem 0 0.65rem 0.7rem;
+    }
+
+    .values { list-style: none; }
+    .values li { margin: 0.55rem 0; color: #4A4A4A; font-size: 0.95rem; }
     .values li::before { content: "— "; color: #8B7355; }
+
+    .plan-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .plan-table th,
+    .plan-table td {
+      border: 1px solid #DDDBD5;
+      padding: 0.55rem 0.7rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    .plan-table th {
+      background: #F7F4EE;
+      color: #4A3728;
+      font-weight: 600;
+      width: 28%;
+    }
+    .plan-table td { color: #4A4A4A; }
+    .plan-note {
+      margin-top: 0.85rem;
+      font-size: 0.78rem;
+      color: #9A9A9A;
+    }
 
     .cta { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
     .btn {
@@ -58,6 +186,12 @@
     footer a { color: #4A3728; }
     .back-link { display: inline-block; margin-top: 0.75rem; font-size: 0.8rem; color: #6A6A6A; text-decoration: none; }
     .back-link:hover { color: #4A3728; }
+
+    @media (max-width: 520px) {
+      .step-visual { margin-left: 0; }
+      .step-visual img { max-width: 220px; }
+      .step-visual--wide img { max-width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -66,20 +200,176 @@
 
     <h1>ご飯だよ！</h1>
     <p class="tagline">今日の献立、決めよう。</p>
-    <p class="dev-badge">Now in development</p>
+    <p class="dev-badge">Coming soon</p>
 
-    <ul class="values">
-      <li>今日は何を作ろう、を毎日悩まなくていい献立管理アプリ</li>
-      <li>シンプルな記録・提案で、日々の「ご飯だよ！」を後押し</li>
-      <li>NINJINE が開発中のプロダクトの一つ</li>
-    </ul>
+    <section class="section" aria-labelledby="about-title">
+      <p class="section-label">About</p>
+      <h2 id="about-title">こんなアプリです</h2>
+      <p>
+        「今日のご飯、どうしよう」を毎日考えなくていいようにする、着せ替えノート式の献立アプリです。
+        主菜・副菜・汁物を組み合わせて、その日の一膳を組み立てます。
+      </p>
+      <p>
+        自分のレシピを溜め、必要なら外部のレシピページへのリンクも残せます。
+        手元の食材を登録してマッチングし、使えるレシピを絞り込めます。
+        公開レシピから気になる一品を取り込むこともできます（アカウント・プレミアム機能）。
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="howto-title">
+      <p class="section-label">How to use</p>
+      <h2 id="howto-title">使い方</h2>
+      <div class="workflow" role="list">
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">1</span>
+            <div>
+              <p class="step-name">レシピを溜める</p>
+              <p class="step-desc">Myレシピに一品ずつ登録。カテゴリやタグで絞り込みもできます。</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="assets/screenshots/recipes.png" width="1284" height="2778" alt="レシピ一覧画面">
+            <figcaption>レシピ一覧</figcaption>
+          </figure>
+        </article>
+
+        <div class="step-connector" aria-hidden="true"></div>
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">2</span>
+            <div>
+              <p class="step-name">材料と手順を整える</p>
+              <p class="step-desc">食材・分量・手順・タイマーを編集。外部レシピURLも残せます。</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="assets/screenshots/detail.png" width="1284" height="2778" alt="レシピ詳細画面">
+            <figcaption>レシピ詳細</figcaption>
+          </figure>
+        </article>
+
+        <div class="step-connector" aria-hidden="true"></div>
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">3</span>
+            <div>
+              <p class="step-name">手元の食材を登録する</p>
+              <p class="step-desc">冷蔵庫やパントリーにある食材と分量を登録。献立選びに活かせます。</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="assets/screenshots/ingredients.png" width="1284" height="2778" alt="食材一覧画面">
+            <figcaption>食材</figcaption>
+          </figure>
+        </article>
+
+        <div class="step-connector" aria-hidden="true"></div>
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">4</span>
+            <div>
+              <p class="step-name">今日の献立を組み合わせる</p>
+              <p class="step-desc">主菜・副菜・汁物をボード上で選んで、その日の一膳を組み立てます。登録した食材とのマッチングで、使えるレシピを絞り込めます。</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="assets/screenshots/board.png" width="1284" height="2778" alt="今日の献立ボード画面">
+            <figcaption>今日の献立</figcaption>
+          </figure>
+        </article>
+
+        <div class="step-connector" aria-hidden="true"></div>
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">5</span>
+            <div>
+              <p class="step-name">まとめて調理する</p>
+              <p class="step-desc">横画面の調理セッションで、複数品の手順とタイマーを同時に進めます。</p>
+            </div>
+          </div>
+          <figure class="step-visual step-visual--wide">
+            <img src="assets/screenshots/cooking.png" width="2778" height="1284" alt="調理セッション画面（横向き）">
+            <figcaption>調理セッション</figcaption>
+          </figure>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="features-title">
+      <p class="section-label">Features</p>
+      <h2 id="features-title">できること</h2>
+      <ul class="values">
+        <li>主菜・副菜・汁物の献立コンビネーター</li>
+        <li>レシピの保存・削除、外部URLの登録</li>
+        <li>食材の登録とマッチング（使えるレシピの絞り込み）</li>
+        <li>横画面の調理セッション（複数品の同時進行）</li>
+        <li>公開レシピの閲覧・取得（プレミアム）</li>
+        <li>NINJINE が開発するプロダクトの一つ</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="premium-title">
+      <p class="section-label">Premium</p>
+      <h2 id="premium-title">無料とプレミアム</h2>
+      <p>
+        基本の献立づくりは無料で使えます。公開レシピの共有機能と広告なし体験はプレミアム（サブスク）です。
+      </p>
+      <table class="plan-table">
+        <thead>
+          <tr>
+            <th scope="col">区分</th>
+            <th scope="col">内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">無料</th>
+            <td>レシピ登録・献立ボード・食材マッチング・調理。ローカル中心で利用できます。</td>
+          </tr>
+          <tr>
+            <th scope="row">プレミアム</th>
+            <td>広告なし／公開レシピの閲覧・取得／自分のレシピ公開（アカウント必須）</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="plan-table">
+        <thead>
+          <tr>
+            <th scope="col">プラン</th>
+            <th scope="col">料金</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">月額</th>
+            <td>¥250</td>
+          </tr>
+          <tr>
+            <th scope="row">年額</th>
+            <td>¥2,500</td>
+          </tr>
+          <tr>
+            <th scope="row">トライアル</th>
+            <td>7日間</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="plan-note">※ App Store アプリ内課金。価格は変更される場合があります。</p>
+    </section>
 
     <div class="cta">
       <a class="btn" href="mailto:joh.shimo.jp@gmail.com?subject=%E3%81%94%E9%A3%AF%E3%81%A0%E3%82%88%EF%BC%81%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">お問い合わせ（Support）</a>
     </div>
 
     <footer>
-      <p>© 2026 NINJINE — ご飯だよ！ In development</p>
+      <p>© 2026 NINJINE — ご飯だよ！</p>
       <p>Support: <a href="mailto:joh.shimo.jp@gmail.com">joh.shimo.jp@gmail.com</a></p>
       <p><a href="privacy/">プライバシーポリシー</a> ・ <a href="terms/">利用規約</a></p>
       <a class="back-link" href="../">← NINJINE トップへ戻る</a>
