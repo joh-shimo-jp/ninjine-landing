@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>公式レシピ — ご飯だよ！</title>
+  <meta name="description" content="ご飯だよ！公式レシピ一覧。共有シートからアプリへ取り込めます。">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+      background: #FAFAF8;
+      color: #2A2A2A;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: #8B7355;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 1.6rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+    .lead {
+      color: #6A6A6A;
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+    }
+    .list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .list a {
+      display: block;
+      padding: 1.1rem 1.25rem;
+      background: #fff;
+      border: 1px solid #DDDBD5;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #2A2A2A;
+      transition: background 0.15s;
+    }
+    .list a:hover { background: #F7F4EE; }
+    .list .name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .list .meta {
+      margin-top: 0.25rem;
+      font-size: 0.82rem;
+      color: #6A6A6A;
+    }
+    .note {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: #9A9A9A;
+    }
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.78rem;
+      color: #6A6A6A;
+      text-align: center;
+    }
+    footer a { color: #4A3728; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Official recipes</p>
+    <h1>公式レシピ</h1>
+    <p class="lead">各レシピページから、共有シート経由で「ご飯だよ！」へ取り込めます（PoC・随時追加）。</p>
+
+    <ul class="list">
+      <li>
+        <a href="tori-teriyaki/">
+          <p class="name">鶏の照り焼き</p>
+          <p class="meta">主菜 · 約20分 · 2人分</p>
+        </a>
+      </li>
+    </ul>
+
+    <p class="note">※ アプリ側の変更は不要です。既存の共有取り込み（M-IMPORT-01）を利用します。</p>
+
+    <footer>
+      <p><a href="../">← ご飯だよ！LP</a></p>
+      <p>© 2026 NINJINE — ご飯だよ！</p>
+    </footer>
+  </main>
+</body>
+</html>

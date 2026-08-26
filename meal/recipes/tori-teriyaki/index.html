@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鶏の照り焼き — ご飯だよ！公式レシピ</title>
+  <meta name="description" content="ご飯だよ！公式レシピ：鶏の照り焼き。共有シートからアプリへ取り込めます。">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+      background: #FAFAF8;
+      color: #2A2A2A;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: #8B7355;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 1.7rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.35rem;
+      font-weight: 700;
+    }
+    .meta {
+      color: #6A6A6A;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .meta span + span::before {
+      content: " · ";
+      color: #C4B8A8;
+    }
+    .section {
+      margin: 1.5rem 0;
+      padding: 1.25rem 1.35rem 1.4rem;
+      background: #fff;
+      border: 1px solid #DDDBD5;
+      border-radius: 8px;
+    }
+    .section h2 {
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    ul { list-style: none; }
+    ul li {
+      margin: 0.4rem 0;
+      color: #4A4A4A;
+      font-size: 0.95rem;
+      padding-left: 0.9rem;
+      position: relative;
+    }
+    ul li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #8B7355;
+    }
+    .ing-qty { color: #6A6A6A; }
+    .steps li { margin: 0.85rem 0; }
+    .step-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: #8B7355;
+      border: 1px solid #C4B8A8;
+      border-radius: 4px;
+      padding: 0.05rem 0.45rem;
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.06em;
+    }
+    .howto {
+      font-size: 0.88rem;
+      color: #4A4A4A;
+    }
+    .howto ol {
+      margin: 0.6rem 0 0 1.2rem;
+    }
+    .howto li { margin: 0.35rem 0; }
+    .cta {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      align-items: stretch;
+    }
+    .btn {
+      display: inline-block;
+      text-align: center;
+      padding: 0.7rem 1.25rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      border: 1px solid #2A2A2A;
+      color: #2A2A2A;
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: #F0EDE5; }
+    .btn-primary {
+      background: #2A2A2A;
+      color: #FAFAF8;
+      border-color: #2A2A2A;
+    }
+    .btn-primary:hover { background: #4A3728; border-color: #4A3728; }
+    .status {
+      min-height: 1.25rem;
+      margin-top: 0.5rem;
+      font-size: 0.82rem;
+      color: #6A6A6A;
+      text-align: center;
+    }
+    .status.is-ok { color: #3D6B4F; }
+    .status.is-err { color: #8B3A3A; }
+    details.share-raw {
+      margin-top: 1.25rem;
+      font-size: 0.82rem;
+      color: #6A6A6A;
+    }
+    details.share-raw summary {
+      cursor: pointer;
+      color: #4A3728;
+    }
+    pre.share-text {
+      margin-top: 0.65rem;
+      padding: 0.9rem 1rem;
+      background: #F7F4EE;
+      border: 1px solid #DDDBD5;
+      border-radius: 6px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.78rem;
+      color: #2A2A2A;
+      line-height: 1.55;
+    }
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.78rem;
+      color: #6A6A6A;
+      text-align: center;
+    }
+    footer a { color: #4A3728; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Official recipe · PoC</p>
+    <h1>鶏の照り焼き</h1>
+    <p class="meta">
+      <span>主菜</span>
+      <span>2人分</span>
+      <span>約20分</span>
+      <span>和食 / 鶏肉</span>
+    </p>
+
+    <section class="section" aria-labelledby="ing-title">
+      <h2 id="ing-title">食材</h2>
+      <ul>
+        <li>鶏もも肉 <span class="ing-qty">2枚</span></li>
+        <li>醤油 <span class="ing-qty">大さじ2</span></li>
+        <li>みりん <span class="ing-qty">大さじ2</span></li>
+        <li>酒 <span class="ing-qty">大さじ1</span></li>
+        <li>砂糖 <span class="ing-qty">小さじ1</span></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="steps-title">
+      <h2 id="steps-title">手順</h2>
+      <ul class="steps">
+        <li>
+          <span class="step-label">準備</span>
+          <p>鶏もも肉の余分な脂を取り除き、フォークで数か所刺して火の通りをよくする。醤油・みりん・酒・砂糖を混ぜてたれを作っておく。</p>
+        </li>
+        <li>
+          <span class="step-label">加熱</span>
+          <p>フライパンを中火で熱し、鶏肉を皮目から入れて動かさずにしっかり焼き色をつける。裏返して中まで火を通す。</p>
+        </li>
+        <li>
+          <span class="step-label">仕上げ</span>
+          <p>余分な脂をふき取り、たれを加えて煮からめる。とろみがついて照りが出たら食べやすく切って盛りつける。</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="send-title">
+      <h2 id="send-title">ご飯だよ！に送る</h2>
+      <div class="howto">
+        <p>下のボタンでレシピテキストを共有し、共有先で「ご飯だよ！」を選んでください。アプリが新規レシピ画面にプリフィルします（自動保存しません）。</p>
+        <ol>
+          <li>「ご飯だよ！に送る」をタップ</li>
+          <li>共有シートで「ご飯だよ！」を選ぶ</li>
+          <li>内容を確認して保存</li>
+        </ol>
+      </div>
+      <div class="cta">
+        <button type="button" class="btn btn-primary" id="share-to-meal">ご飯だよ！に送る</button>
+        <button type="button" class="btn" id="copy-meal-text">テキストをコピー</button>
+      </div>
+      <p class="status" id="share-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- M-IMPORT-01 準拠テキスト（共有・コピーの正） -->
+    <pre class="share-text" id="meal-share-text" hidden>献立名: 鶏の照り焼き
+分類: 主菜
+人数: 2
+調理時間: 20分
+タグ: 和食, 鶏肉
+
+## 食材
+- 鶏もも肉 | 2枚
+- 醤油 | 大さじ2
+- みりん | 大さじ2
+- 酒 | 大さじ1
+- 砂糖 | 小さじ1
+
+## 手順
+- 準備 | 鶏もも肉の余分な脂を取り除き、フォークで数か所刺して火の通りをよくする。醤油・みりん・酒・砂糖を混ぜてたれを作っておく。
+- 加熱 | フライパンを中火で熱し、鶏肉を皮目から入れて動かさずにしっかり焼き色をつける。裏返して中まで火を通す。
+- 仕上げ | 余分な脂をふき取り、たれを加えて煮からめる。とろみがついて照りが出たら食べやすく切って盛りつける。</pre>
+
+    <details class="share-raw">
+      <summary>共有テキストを表示（デバッグ用）</summary>
+      <pre class="share-text" id="meal-share-text-visible"></pre>
+    </details>
+
+    <footer>
+      <p><a href="../">← 公式レシピ一覧</a> · <a href="../../">ご飯だよ！LP</a></p>
+      <p>© 2026 NINJINE — ご飯だよ！</p>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var source = document.getElementById('meal-share-text');
+      var visible = document.getElementById('meal-share-text-visible');
+      var statusEl = document.getElementById('share-status');
+      var text = (source.textContent || '').replace(/^\n+/, '').replace(/\n+$/, '') + '\n';
+      if (visible) visible.textContent = text;
+
+      function setStatus(msg, ok) {
+        statusEl.textContent = msg || '';
+        statusEl.classList.remove('is-ok', 'is-err');
+        if (msg) statusEl.classList.add(ok ? 'is-ok' : 'is-err');
+      }
+
+      function copyText() {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          return navigator.clipboard.writeText(text);
+        }
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+          return Promise.resolve();
+        } catch (e) {
+          return Promise.reject(e);
+        } finally {
+          document.body.removeChild(ta);
+        }
+      }
+
+      document.getElementById('copy-meal-text').addEventListener('click', function () {
+        copyText()
+          .then(function () { setStatus('コピーしました。共有シートから「ご飯だよ！」へ貼り付け／共有できます。', true); })
+          .catch(function () { setStatus('コピーに失敗しました。下の「共有テキストを表示」から手動コピーしてください。', false); });
+      });
+
+      document.getElementById('share-to-meal').addEventListener('click', function () {
+        if (navigator.share) {
+          navigator.share({ text: text })
+            .then(function () { setStatus('共有シートを開きました。「ご飯だよ！」を選んでください。', true); })
+            .catch(function (err) {
+              if (err && err.name === 'AbortError') {
+                setStatus('', true);
+                return;
+              }
+              copyText()
+                .then(function () { setStatus('共有できないためコピーしました。', true); })
+                .catch(function () { setStatus('共有に失敗しました。テキスト表示からコピーしてください。', false); });
+            });
+          return;
+        }
+        copyText()
+          .then(function () { setStatus('このブラウザは共有非対応のためコピーしました。', true); })
+          .catch(function () { setStatus('共有・コピーともに失敗しました。テキスト表示からコピーしてください。', false); });
+      });
+    })();
+  </script>
+</body>
+</html>
