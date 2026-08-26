@@ -8,7 +8,7 @@ NINJINE の公開サイト（GitHub Pages）。会社ハブとして、ESHINE（
 |---|---|---|---|
 | 会社 INDEX | `index.html` | NINJINE ブランド表記の会社ハブ。ESHINE（外部リンク）・ご飯だよ！（内部リンク）への導線 | https://joh-shimo-jp.github.io/ninjine-landing/ |
 | ご飯だよ！LP | `meal/index.html` | 「ご飯だよ！」紹介 LP（App Store Connect の Marketing URL / Support URL 用） | https://joh-shimo-jp.github.io/ninjine-landing/meal/ |
-| 公式レシピ（PoC） | `meal/recipes/` | GitHub Pages 公式レシピ。共有シートでアプリへテキスト取り込み（M-IMPORT-01） | https://joh-shimo-jp.github.io/ninjine-landing/meal/recipes/ |
+| 公式レシピ | `meal/recipes/` | GitHub Pages 公式レシピ。共有シートでアプリへテキスト取り込み | https://joh-shimo-jp.github.io/ninjine-landing/meal/recipes/ |
 
 ### ディレクトリ名 `meal/` と表示名「ご飯だよ！」の対応関係
 
