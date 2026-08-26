@@ -208,19 +208,22 @@
     /* 公式レシピ FAB（常時表示） */
     .fab-recipes {
       position: fixed;
-      right: 1.1rem;
-      bottom: 1.1rem;
+      right: 1rem;
+      bottom: 1rem;
       z-index: 40;
-      width: 3.4rem;
-      height: 3.4rem;
-      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      max-width: calc(100vw - 2rem);
+      padding: 0.7rem 1rem 0.7rem 0.85rem;
+      border-radius: 999px;
       background: #2A2A2A;
       color: #FAFAF8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       box-shadow: 0 10px 28px rgba(0,0,0,0.22);
       text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
       transition: background 0.15s, transform 0.15s;
     }
     .fab-recipes:hover {
@@ -231,21 +234,38 @@
       outline: 2px solid #8B7355;
       outline-offset: 3px;
     }
+    .fab-recipes-icon {
+      flex: 0 0 auto;
+      width: 1.85rem;
+      height: 1.85rem;
+      border-radius: 50%;
+      background: rgba(250,250,248,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .fab-recipes svg {
-      width: 1.45rem;
-      height: 1.45rem;
+      width: 1.05rem;
+      height: 1.05rem;
       display: block;
+    }
+    .fab-recipes-label {
+      padding-right: 0.15rem;
+      white-space: nowrap;
     }
   </style>
 </head>
 <body>
-  <a class="fab-recipes" href="recipes/" aria-label="公式レシピ（ギフト）">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <rect x="3" y="10" width="18" height="11" rx="1.5"></rect>
-      <path d="M12 10v11"></path>
-      <path d="M3 14h18"></path>
-      <path d="M12 10c-2.2-3.5-5.5-3.8-5.5-1.6S9.5 11 12 10c2.2-3.5 5.5-3.8 5.5-1.6S14.5 11 12 10z"></path>
-    </svg>
+  <a class="fab-recipes" href="recipes/">
+    <span class="fab-recipes-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="10" width="18" height="11" rx="1.5"></rect>
+        <path d="M12 10v11"></path>
+        <path d="M3 14h18"></path>
+        <path d="M12 10c-2.2-3.5-5.5-3.8-5.5-1.6S9.5 11 12 10c2.2-3.5 5.5-3.8 5.5-1.6S14.5 11 12 10z"></path>
+      </svg>
+    </span>
+    <span class="fab-recipes-label">公式レシピはこちら</span>
   </a>
 
   <main>
@@ -418,13 +438,15 @@
     </section>
 
     <div class="cta">
+      <a class="btn btn-primary" href="https://apps.apple.com/jp/app/%E3%81%94%E9%A3%AF%E3%81%A0%E3%82%88/id6793112450" target="_blank" rel="noopener noreferrer">App Store でダウンロード</a>
+      <a class="btn" href="recipes/">公式レシピを見る（共有で取り込み）</a>
       <a class="btn" href="mailto:joh.shimo.jp@gmail.com?subject=%E3%81%94%E9%A3%AF%E3%81%A0%E3%82%88%EF%BC%81%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">お問い合わせ（Support）</a>
     </div>
 
     <footer>
       <p>© 2026 NINJINE — ご飯だよ！</p>
       <p>Support: <a href="mailto:joh.shimo.jp@gmail.com">joh.shimo.jp@gmail.com</a></p>
-      <p><a href="privacy/">プライバシーポリシー</a> ・ <a href="terms/">利用規約</a></p>
+      <p><a href="privacy/">プライバシーポリシー</a> ・ <a href="terms/">利用規約</a> ・ <a href="recipes/">公式レシピ</a></p>
       <a class="back-link" href="../">← NINJINE トップへ戻る</a>
     </footer>
   </main>
