@@ -44,6 +44,58 @@ def search_keywords(recipe: dict) -> str:
     return " ".join(parts)
 
 
+DEFAULT_STEP_MINUTES = {"準備": 5, "加熱": 10, "仕上げ": 3}
+
+
+def step_minutes(step: dict) -> int | None:
+    if step.get("timerMinutes") is not None:
+        return int(step["timerMinutes"])
+    sec = step.get("timerSeconds")
+    if sec:
+        return max(1, round(int(sec) / 60))
+    return None
+
+
+def enrich_step_times(steps: list[dict]) -> list[dict]:
+    out: list[dict] = []
+    for raw in steps:
+        step = dict(raw)
+        if step_minutes(step) is None:
+            text = step.get("text", "")
+            match = re.search(r"(\d+)\s*分", text)
+            if match:
+                snippet = text[match.start() : match.end() + 2]
+                if "短" not in snippet and "早" not in snippet:
+                    step["timerMinutes"] = int(match.group(1))
+            if step_minutes(step) is None:
+                default = DEFAULT_STEP_MINUTES.get(step.get("label", ""))
+                if default is not None:
+                    step["timerMinutes"] = default
+        out.append(step)
+    return out
+
+
+def step_label_html(step: dict) -> str:
+    label = html.escape(step["label"])
+    mins = step_minutes(step)
+    if mins is None:
+        return f'<span class="step-label">{label}</span>'
+    return (
+        f'<span class="step-head">'
+        f'<span class="step-label">{label}</span>'
+        f'<span class="step-time">{mins}分</span>'
+        f"</span>"
+    )
+
+
+def step_share_text(step: dict) -> str:
+    mins = step_minutes(step)
+    body = step["text"]
+    if mins is not None:
+        body = f"{mins}分 / {body}"
+    return f"- {step['label']} | {body}"
+
+
 def meal_share_text(recipe: dict) -> str:
     cat = CATEGORY_LABEL[recipe["category"]]
     tags = ", ".join(recipe.get("tags") or [])
@@ -61,11 +113,17 @@ def meal_share_text(recipe: dict) -> str:
     lines.append("")
     lines.append("## 手順")
     for step in recipe["steps"]:
-        lines.append(f"- {step['label']} | {step['text']}")
+        lines.append(step_share_text(step))
     return "\n".join(lines) + "\n"
 
 
 def normalize_template_entry(entry: dict, slug: str) -> dict:
+    steps = []
+    for s in entry["steps"]:
+        step = {"label": s["label"], "text": s["text"]}
+        if s.get("timerSeconds") is not None:
+            step["timerSeconds"] = s["timerSeconds"]
+        steps.append(step)
     return {
         "slug": slug,
         "id": entry["id"],
@@ -76,7 +134,7 @@ def normalize_template_entry(entry: dict, slug: str) -> dict:
         "tags": entry["tags"],
         "servings": entry["servings"],
         "ingredients": entry["ingredients"],
-        "steps": [{"label": s["label"], "text": s["text"]} for s in entry["steps"]],
+        "steps": enrich_step_times(steps),
     }
 
 
@@ -91,6 +149,7 @@ def build_catalog() -> list[dict]:
 
     for entry in EXTRA_RECIPES:
         entry["categoryLabel"] = CATEGORY_LABEL[entry["category"]]
+        entry["steps"] = enrich_step_times(entry["steps"])
         entry["searchKeywords"] = search_keywords(entry)
         recipes.append(entry)
 
@@ -111,7 +170,7 @@ def render_detail(recipe: dict) -> str:
     )
     step_lines = "\n".join(
         f"""        <li>
-          <span class="step-label">{html.escape(s["label"])}</span>
+          {step_label_html(s)}
           <p>{html.escape(s["text"])}</p>
         </li>"""
         for s in recipe["steps"]
@@ -147,7 +206,9 @@ def render_detail(recipe: dict) -> str:
     ul li::before {{ content: "—"; position: absolute; left: 0; color: #8B7355; }}
     .ing-qty {{ color: #6A6A6A; }}
     .steps li {{ margin: 0.85rem 0; }}
-    .step-label {{ display: inline-block; font-size: 0.75rem; color: #8B7355; border: 1px solid #C4B8A8; border-radius: 4px; padding: 0.05rem 0.45rem; margin-bottom: 0.25rem; letter-spacing: 0.06em; }}
+    .step-head {{ display: inline-flex; align-items: center; gap: 0.35rem; margin-bottom: 0.25rem; }}
+    .step-label {{ display: inline-block; font-size: 0.75rem; color: #8B7355; border: 1px solid #C4B8A8; border-radius: 4px; padding: 0.05rem 0.45rem; letter-spacing: 0.06em; }}
+    .step-time {{ font-size: 0.82rem; color: #4A3728; font-weight: 600; letter-spacing: 0.04em; }}
     .howto {{ font-size: 0.88rem; color: #4A4A4A; }}
     .howto ol {{ margin: 0.6rem 0 0 1.2rem; }}
     .howto li {{ margin: 0.35rem 0; }}

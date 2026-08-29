@@ -28,7 +28,9 @@
     ul li::before { content: "—"; position: absolute; left: 0; color: #8B7355; }
     .ing-qty { color: #6A6A6A; }
     .steps li { margin: 0.85rem 0; }
-    .step-label { display: inline-block; font-size: 0.75rem; color: #8B7355; border: 1px solid #C4B8A8; border-radius: 4px; padding: 0.05rem 0.45rem; margin-bottom: 0.25rem; letter-spacing: 0.06em; }
+    .step-head { display: inline-flex; align-items: center; gap: 0.35rem; margin-bottom: 0.25rem; }
+    .step-label { display: inline-block; font-size: 0.75rem; color: #8B7355; border: 1px solid #C4B8A8; border-radius: 4px; padding: 0.05rem 0.45rem; letter-spacing: 0.06em; }
+    .step-time { font-size: 0.82rem; color: #4A3728; font-weight: 600; letter-spacing: 0.04em; }
     .howto { font-size: 0.88rem; color: #4A4A4A; }
     .howto ol { margin: 0.6rem 0 0 1.2rem; }
     .howto li { margin: 0.35rem 0; }
@@ -73,15 +75,15 @@
       <h2 id="steps-title">手順</h2>
       <ul class="steps">
         <li>
-          <span class="step-label">準備</span>
+          <span class="step-head"><span class="step-label">準備</span><span class="step-time">5分</span></span>
           <p>牛肉は一口大、野菜は大きめに切る。肉に小麦粉を薄くまぶす。</p>
         </li>
         <li>
-          <span class="step-label">加熱</span>
+          <span class="step-head"><span class="step-label">加熱</span><span class="step-time">60分</span></span>
           <p>鍋で肉をこんがり焼き、野菜を加えて炒める。赤ワインと水を入れ、弱火で60分煮込む。デミグラスソースを加えてとろみをつける。</p>
         </li>
         <li>
-          <span class="step-label">仕上げ</span>
+          <span class="step-head"><span class="step-label">仕上げ</span><span class="step-time">3分</span></span>
           <p>塩胡椒で味を整え、器に盛る。</p>
         </li>
       </ul>
@@ -117,9 +119,9 @@
 - デミグラスソース | 1缶
 
 ## 手順
-- 準備 | 牛肉は一口大、野菜は大きめに切る。肉に小麦粉を薄くまぶす。
-- 加熱 | 鍋で肉をこんがり焼き、野菜を加えて炒める。赤ワインと水を入れ、弱火で60分煮込む。デミグラスソースを加えてとろみをつける。
-- 仕上げ | 塩胡椒で味を整え、器に盛る。
+- 準備 | 5分 / 牛肉は一口大、野菜は大きめに切る。肉に小麦粉を薄くまぶす。
+- 加熱 | 60分 / 鍋で肉をこんがり焼き、野菜を加えて炒める。赤ワインと水を入れ、弱火で60分煮込む。デミグラスソースを加えてとろみをつける。
+- 仕上げ | 3分 / 塩胡椒で味を整え、器に盛る。
 </pre>
     <details class="share-raw">
       <summary>共有テキストを表示（デバッグ用）</summary>

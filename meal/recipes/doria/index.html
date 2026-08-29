@@ -28,7 +28,9 @@
     ul li::before { content: "—"; position: absolute; left: 0; color: #8B7355; }
     .ing-qty { color: #6A6A6A; }
     .steps li { margin: 0.85rem 0; }
-    .step-label { display: inline-block; font-size: 0.75rem; color: #8B7355; border: 1px solid #C4B8A8; border-radius: 4px; padding: 0.05rem 0.45rem; margin-bottom: 0.25rem; letter-spacing: 0.06em; }
+    .step-head { display: inline-flex; align-items: center; gap: 0.35rem; margin-bottom: 0.25rem; }
+    .step-label { display: inline-block; font-size: 0.75rem; color: #8B7355; border: 1px solid #C4B8A8; border-radius: 4px; padding: 0.05rem 0.45rem; letter-spacing: 0.06em; }
+    .step-time { font-size: 0.82rem; color: #4A3728; font-weight: 600; letter-spacing: 0.04em; }
     .howto { font-size: 0.88rem; color: #4A4A4A; }
     .howto ol { margin: 0.6rem 0 0 1.2rem; }
     .howto li { margin: 0.35rem 0; }
@@ -73,15 +75,15 @@
       <h2 id="steps-title">手順</h2>
       <ul class="steps">
         <li>
-          <span class="step-label">準備</span>
+          <span class="step-head"><span class="step-label">準備</span><span class="step-time">5分</span></span>
           <p>玉ねぎと合いびき肉を炒め、バターとケチャップで味付けしたライスを作る。</p>
         </li>
         <li>
-          <span class="step-label">加熱</span>
+          <span class="step-head"><span class="step-label">加熱</span><span class="step-time">10分</span></span>
           <p>耐熱皿にライスを敷き、ホワイトソースをかける。</p>
         </li>
         <li>
-          <span class="step-label">仕上げ</span>
+          <span class="step-head"><span class="step-label">仕上げ</span><span class="step-time">5分</span></span>
           <p>チーズをのせてトースターで5分ほど焼き、焦げ目がついたら完成。</p>
         </li>
       </ul>
@@ -117,9 +119,9 @@
 - チーズ | 適量
 
 ## 手順
-- 準備 | 玉ねぎと合いびき肉を炒め、バターとケチャップで味付けしたライスを作る。
-- 加熱 | 耐熱皿にライスを敷き、ホワイトソースをかける。
-- 仕上げ | チーズをのせてトースターで5分ほど焼き、焦げ目がついたら完成。
+- 準備 | 5分 / 玉ねぎと合いびき肉を炒め、バターとケチャップで味付けしたライスを作る。
+- 加熱 | 10分 / 耐熱皿にライスを敷き、ホワイトソースをかける。
+- 仕上げ | 5分 / チーズをのせてトースターで5分ほど焼き、焦げ目がついたら完成。
 </pre>
     <details class="share-raw">
       <summary>共有テキストを表示（デバッグ用）</summary>

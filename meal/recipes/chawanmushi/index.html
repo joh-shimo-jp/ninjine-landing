@@ -28,7 +28,9 @@
     ul li::before { content: "—"; position: absolute; left: 0; color: #8B7355; }
     .ing-qty { color: #6A6A6A; }
     .steps li { margin: 0.85rem 0; }
-    .step-label { display: inline-block; font-size: 0.75rem; color: #8B7355; border: 1px solid #C4B8A8; border-radius: 4px; padding: 0.05rem 0.45rem; margin-bottom: 0.25rem; letter-spacing: 0.06em; }
+    .step-head { display: inline-flex; align-items: center; gap: 0.35rem; margin-bottom: 0.25rem; }
+    .step-label { display: inline-block; font-size: 0.75rem; color: #8B7355; border: 1px solid #C4B8A8; border-radius: 4px; padding: 0.05rem 0.45rem; letter-spacing: 0.06em; }
+    .step-time { font-size: 0.82rem; color: #4A3728; font-weight: 600; letter-spacing: 0.04em; }
     .howto { font-size: 0.88rem; color: #4A4A4A; }
     .howto ol { margin: 0.6rem 0 0 1.2rem; }
     .howto li { margin: 0.35rem 0; }
@@ -72,15 +74,15 @@
       <h2 id="steps-title">手順</h2>
       <ul class="steps">
         <li>
-          <span class="step-label">準備</span>
+          <span class="step-head"><span class="step-label">準備</span><span class="step-time">8分</span></span>
           <p>卵を溶き、だしと混ぜて茶碗に8分目まで注ぐ。鶏肉・しいたけ・かまぼこを入れる。</p>
         </li>
         <li>
-          <span class="step-label">加熱</span>
+          <span class="step-head"><span class="step-label">加熱</span><span class="step-time">15分</span></span>
           <p>茶碗にアルミホイルをし、蒸し器または湯せんで15分蒸す。</p>
         </li>
         <li>
-          <span class="step-label">仕上げ</span>
+          <span class="step-head"><span class="step-label">仕上げ</span><span class="step-time">3分</span></span>
           <p>竹串を刺して透明な液が出なければ完成。</p>
         </li>
       </ul>
@@ -115,9 +117,9 @@
 - かまぼこ | 2切れ
 
 ## 手順
-- 準備 | 卵を溶き、だしと混ぜて茶碗に8分目まで注ぐ。鶏肉・しいたけ・かまぼこを入れる。
-- 加熱 | 茶碗にアルミホイルをし、蒸し器または湯せんで15分蒸す。
-- 仕上げ | 竹串を刺して透明な液が出なければ完成。
+- 準備 | 8分 / 卵を溶き、だしと混ぜて茶碗に8分目まで注ぐ。鶏肉・しいたけ・かまぼこを入れる。
+- 加熱 | 15分 / 茶碗にアルミホイルをし、蒸し器または湯せんで15分蒸す。
+- 仕上げ | 3分 / 竹串を刺して透明な液が出なければ完成。
 </pre>
     <details class="share-raw">
       <summary>共有テキストを表示（デバッグ用）</summary>

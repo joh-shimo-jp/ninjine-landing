@@ -28,7 +28,9 @@
     ul li::before { content: "—"; position: absolute; left: 0; color: #8B7355; }
     .ing-qty { color: #6A6A6A; }
     .steps li { margin: 0.85rem 0; }
-    .step-label { display: inline-block; font-size: 0.75rem; color: #8B7355; border: 1px solid #C4B8A8; border-radius: 4px; padding: 0.05rem 0.45rem; margin-bottom: 0.25rem; letter-spacing: 0.06em; }
+    .step-head { display: inline-flex; align-items: center; gap: 0.35rem; margin-bottom: 0.25rem; }
+    .step-label { display: inline-block; font-size: 0.75rem; color: #8B7355; border: 1px solid #C4B8A8; border-radius: 4px; padding: 0.05rem 0.45rem; letter-spacing: 0.06em; }
+    .step-time { font-size: 0.82rem; color: #4A3728; font-weight: 600; letter-spacing: 0.04em; }
     .howto { font-size: 0.88rem; color: #4A4A4A; }
     .howto ol { margin: 0.6rem 0 0 1.2rem; }
     .howto li { margin: 0.35rem 0; }
@@ -72,15 +74,15 @@
       <h2 id="steps-title">手順</h2>
       <ul class="steps">
         <li>
-          <span class="step-label">準備</span>
+          <span class="step-head"><span class="step-label">準備</span><span class="step-time">5分</span></span>
           <p>にんにくは薄切り、唐辛子は輪切りにする。パセリはみじん切りにしておく。</p>
         </li>
         <li>
-          <span class="step-label">加熱</span>
+          <span class="step-head"><span class="step-label">加熱</span><span class="step-time">10分</span></span>
           <p>フライパンにオリーブ油とにんにく・唐辛子を入れ、弱火で香りを出す。茹で上がったパスタと茹で汁を少し加え、全体を絡める。</p>
         </li>
         <li>
-          <span class="step-label">仕上げ</span>
+          <span class="step-head"><span class="step-label">仕上げ</span><span class="step-time">3分</span></span>
           <p>塩で味を整え、パセリを散らして皿に盛る。</p>
         </li>
       </ul>
@@ -115,9 +117,9 @@
 - パセリ | 適量
 
 ## 手順
-- 準備 | にんにくは薄切り、唐辛子は輪切りにする。パセリはみじん切りにしておく。
-- 加熱 | フライパンにオリーブ油とにんにく・唐辛子を入れ、弱火で香りを出す。茹で上がったパスタと茹で汁を少し加え、全体を絡める。
-- 仕上げ | 塩で味を整え、パセリを散らして皿に盛る。
+- 準備 | 5分 / にんにくは薄切り、唐辛子は輪切りにする。パセリはみじん切りにしておく。
+- 加熱 | 10分 / フライパンにオリーブ油とにんにく・唐辛子を入れ、弱火で香りを出す。茹で上がったパスタと茹で汁を少し加え、全体を絡める。
+- 仕上げ | 3分 / 塩で味を整え、パセリを散らして皿に盛る。
 </pre>
     <details class="share-raw">
       <summary>共有テキストを表示（デバッグ用）</summary>
