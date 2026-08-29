@@ -72,39 +72,11 @@ def enrich_step_times(steps: list[dict]) -> list[dict]:
                 mins = DEFAULT_STEP_MINUTES.get(step.get("label", ""))
         if mins is not None:
             step["timerMinutes"] = int(mins)
-            step.pop("timerSeconds", None)
+            # Keep timerSeconds for template fidelity when originally present.
+            if "timerSeconds" not in step and step.get("timerMinutes"):
+                step["timerSeconds"] = int(step["timerMinutes"]) * 60
         out.append(step)
     return out
-
-
-def align_total_time(recipe: dict) -> dict:
-    """Make recipe.timeMinutes equal the sum of step times.
-
-    If the declared total is longer than the step sum, put the remainder on
-    the 加熱 step (or the longest step). If shorter, raise the total to the sum.
-    """
-    steps = [dict(s) for s in recipe["steps"]]
-    step_sum = sum(step_minutes(s) or 0 for s in steps)
-    declared = int(recipe.get("timeMinutes") or 0)
-
-    if step_sum <= 0:
-        recipe["steps"] = steps
-        return recipe
-
-    if declared > step_sum:
-        remainder = declared - step_sum
-        target_idx = next(
-            (i for i, s in enumerate(steps) if s.get("label") == "加熱"),
-            max(range(len(steps)), key=lambda i: step_minutes(steps[i]) or 0),
-        )
-        base = step_minutes(steps[target_idx]) or 0
-        steps[target_idx]["timerMinutes"] = base + remainder
-        steps[target_idx].pop("timerSeconds", None)
-        step_sum = declared
-
-    recipe["steps"] = steps
-    recipe["timeMinutes"] = step_sum
-    return recipe
 
 
 def step_label_html(step: dict) -> str:
@@ -121,11 +93,9 @@ def step_label_html(step: dict) -> str:
 
 
 def step_share_text(step: dict) -> str:
-    mins = step_minutes(step)
-    body = step["text"]
-    if mins is not None:
-        body = f"{mins}分 / {body}"
-    return f"- {step['label']} | {body}"
+    # M-IMPORT-01: `- 分類 | 内容` only. Recipe-level 所要時間 is `調理時間:`.
+    # Step minutes are web UI only (アプリの手順タイマーは現行フォーマット非対応).
+    return f"- {step['label']} | {step['text']}"
 
 
 def meal_share_text(recipe: dict) -> str:
@@ -156,7 +126,7 @@ def normalize_template_entry(entry: dict, slug: str) -> dict:
         if s.get("timerSeconds") is not None:
             step["timerSeconds"] = s["timerSeconds"]
         steps.append(step)
-    recipe = {
+    return {
         "slug": slug,
         "id": entry["id"],
         "name": entry["name"],
@@ -168,7 +138,6 @@ def normalize_template_entry(entry: dict, slug: str) -> dict:
         "ingredients": entry["ingredients"],
         "steps": enrich_step_times(steps),
     }
-    return align_total_time(recipe)
 
 
 def build_catalog() -> list[dict]:
@@ -183,8 +152,7 @@ def build_catalog() -> list[dict]:
     for entry in EXTRA_RECIPES:
         recipe = dict(entry)
         recipe["categoryLabel"] = CATEGORY_LABEL[recipe["category"]]
-        recipe["steps"] = enrich_step_times(recipe["steps"])
-        recipe = align_total_time(recipe)
+        recipe["steps"] = enrich_step_times(list(recipe["steps"]))
         recipe["searchKeywords"] = search_keywords(recipe)
         recipes.append(recipe)
 

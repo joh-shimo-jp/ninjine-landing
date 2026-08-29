@@ -41,16 +41,19 @@
         {
           "label": "準備",
           "text": "鶏もも肉の余分な脂を取り除き、フォークで数か所刺して火の通りをよくする。醤油・みりん・酒・砂糖を混ぜてたれを作っておく。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンを中火で熱し、鶏肉を皮目から入れて動かさずにしっかり焼き色をつける。裏返して中まで火を通す。",
-          "timerMinutes": 13
+          "timerSeconds": 420,
+          "timerMinutes": 7
         },
         {
           "label": "仕上げ",
           "text": "余分な脂をふき取り、たれを加えて煮からめる。とろみがついて照りが出たら食べやすく切って盛りつける。",
+          "timerSeconds": 120,
           "timerMinutes": 2
         }
       ],
@@ -94,17 +97,20 @@
         {
           "label": "準備",
           "text": "ほうれん草は根元を切り落とし、洗って水気を軽く切る。すりごま・醤油・砂糖・みりんを混ぜて和え衣を作っておく。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "熱湯でほうれん草をさっと茹でる（電子レンジで加熱してもよい）。冷水にとって色止めし、水気をしっかり絞って3〜4cm幅に切る。",
-          "timerMinutes": 2
+          "timerSeconds": 60,
+          "timerMinutes": 1
         },
         {
           "label": "仕上げ",
           "text": "ほうれん草を和え衣に加えて全体を和える。器に盛りつける。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "searchKeywords": "ほうれん草のごま和え 副菜 和食 野菜 ほうれん草 すりごま 醤油 砂糖 みりん"
@@ -115,7 +121,7 @@
       "name": "豆腐とわかめの味噌汁",
       "category": "soup",
       "categoryLabel": "汁物",
-      "timeMinutes": 11,
+      "timeMinutes": 10,
       "tags": [
         "和食",
         "汁物"
@@ -147,17 +153,20 @@
         {
           "label": "準備",
           "text": "豆腐は食べやすい大きさのさいの目に切る。乾燥わかめは水で戻して水気を切る。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "鍋にだしを入れて温め、豆腐とわかめを加えて煮立たせないように温める。",
+          "timerSeconds": 180,
           "timerMinutes": 3
         },
         {
           "label": "仕上げ",
           "text": "火を弱めて味噌を溶き入れる。好みで小ねぎを散らして仕上げる。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "searchKeywords": "豆腐とわかめの味噌汁 汁物 和食 汁物 豆腐 乾燥わかめ だし 味噌 小ねぎ"
@@ -204,16 +213,19 @@
         {
           "label": "準備",
           "text": "生姜をすりおろし、醤油・みりん・酒・砂糖と合わせてたれを作る。豚肉に軽くもみ込んでおく。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンを中火で熱し、豚肉を広げながら炒める。肉の色が変わったら余分な脂をふき取る。",
-          "timerMinutes": 14
+          "timerSeconds": 240,
+          "timerMinutes": 4
         },
         {
           "label": "仕上げ",
           "text": "残ったたれを加えて手早く絡め、汁気を軽く飛ばして盛りつける。",
+          "timerSeconds": 60,
           "timerMinutes": 1
         }
       ],
@@ -265,16 +277,19 @@
         {
           "label": "準備",
           "text": "鶏もも肉は一口大に切り、玉ねぎは薄切りにする。卵は溶いておく。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "浅鍋にだし・醤油・みりんを入れて煮立て、玉ねぎと鶏肉を加えて火が通るまで煮る。",
-          "timerMinutes": 14
+          "timerSeconds": 360,
+          "timerMinutes": 6
         },
         {
           "label": "仕上げ",
           "text": "溶き卵を回し入れ、半熟状になったら火を止めて蓋をし予熱で仕上げる。丼に盛ったご飯にのせる。",
+          "timerSeconds": 60,
           "timerMinutes": 1
         }
       ],
@@ -326,16 +341,19 @@
         {
           "label": "準備",
           "text": "ごぼうとにんじんを細切りにする。ごぼうは水にさらしてアクを抜き、水気を切る。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンにごま油を熱し、ごぼうとにんじんを油が回るまで炒める。",
-          "timerMinutes": 7
+          "timerSeconds": 180,
+          "timerMinutes": 3
         },
         {
           "label": "仕上げ",
           "text": "醤油・みりん・砂糖を加えて汁気がなくなるまで炒め煮にし、いりごまを振って仕上げる。",
+          "timerSeconds": 180,
           "timerMinutes": 3
         }
       ],
@@ -379,17 +397,20 @@
         {
           "label": "準備",
           "text": "かぼちゃはワタを取り、一口大に切って皮を所々そぎ落とす。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "鍋にかぼちゃを皮目を下にして並べ、だし・醤油・みりん・砂糖を加えて落とし蓋をし、竹串が通るまで煮る。",
+          "timerSeconds": 720,
           "timerMinutes": 12
         },
         {
           "label": "仕上げ",
           "text": "火を止めてそのまま少し置き、味を含ませてから盛りつける。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "searchKeywords": "かぼちゃの煮物 副菜 和食 野菜 かぼちゃ だし 醤油 みりん 砂糖"
@@ -436,16 +457,19 @@
         {
           "label": "準備",
           "text": "大根・にんじんはいちょう切り、ごぼうは斜め薄切りにして水にさらす。豚肉は食べやすい大きさに切る。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "鍋にだしと根菜を入れて煮立て、柔らかくなったら豚肉を加えてアクを取りながら煮る。",
-          "timerMinutes": 19
+          "timerSeconds": 600,
+          "timerMinutes": 10
         },
         {
           "label": "仕上げ",
           "text": "火を弱めて味噌を溶き入れ、ひと煮立ちさせて仕上げる。",
+          "timerSeconds": 60,
           "timerMinutes": 1
         }
       ],
@@ -485,17 +509,20 @@
         {
           "label": "準備",
           "text": "なめこはさっと水で洗ってぬめりの汚れを落とす。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "鍋にだしを温め、なめこを加えて煮立たせないように温める。",
+          "timerSeconds": 120,
           "timerMinutes": 2
         },
         {
           "label": "仕上げ",
           "text": "火を弱めて味噌を溶き入れ、器に盛って小ねぎを散らす。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "searchKeywords": "なめこの味噌汁 汁物 和食 汁物 なめこ だし 味噌 小ねぎ"
@@ -550,16 +577,19 @@
         {
           "label": "準備",
           "text": "豆腐はさいの目に切って軽く水気を切る。長ねぎはみじん切りにする。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンでひき肉を炒め、色が変わったら豆板醤・長ねぎを加えて香りが立つまで炒める。甜麺醤（またはみそ）・醤油・鶏がらスープを加えて煮立て、豆腐を加えて2〜3分煮る。",
-          "timerMinutes": 14
+          "timerSeconds": 300,
+          "timerMinutes": 5
         },
         {
           "label": "仕上げ",
           "text": "水溶き片栗粉を回し入れ、全体を混ぜながらとろみをつける。",
+          "timerSeconds": 60,
           "timerMinutes": 1
         }
       ],
@@ -599,17 +629,20 @@
         {
           "label": "準備",
           "text": "小松菜は根元を切り落とし、洗って泥を落とす。めんつゆと水を混ぜて割りつゆを作っておく。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "熱湯で小松菜を茎から先に入れて茹で、全体がしんなりしたら冷水にとる。",
-          "timerMinutes": 2
+          "timerSeconds": 60,
+          "timerMinutes": 1
         },
         {
           "label": "仕上げ",
           "text": "水気をしっかり絞って3〜4cm幅に切り、割りつゆに浸す。器に盛りかつお節をのせる。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "searchKeywords": "小松菜のおひたし 副菜 和食 野菜 小松菜 めんつゆ（2倍濃縮） 水 かつお節"
@@ -651,17 +684,20 @@
         {
           "label": "準備",
           "text": "ベーコンは1cm幅に切る。ボウルに卵・すりおろしチーズ・黒胡椒を入れてよく混ぜ、ソースにしておく。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "大きめの鍋でパスタを表示時間より1分短く茹でる。別のフライパンでベーコンを中火でカリカリになるまで炒める。",
-          "timerMinutes": 17
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "茹で上がったパスタをフライパンに入れ、火を止めてからソースを回し入れ、余熱でとろみをつける。器に盛り、追いチーズと胡椒を振る。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -708,17 +744,20 @@
         {
           "label": "準備",
           "text": "玉ねぎとにんじんはみじん切り、にんにくは薄切りにする。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "オリーブ油でにんにくを香り出し、野菜を炒めてから合いびき肉を加え、色が変わるまで炒める。トマト缶を入れ、とろみがつくまで20分ほど煮込む。",
-          "timerMinutes": 27
+          "timerMinutes": 20,
+          "timerSeconds": 1200
         },
         {
           "label": "仕上げ",
           "text": "別鍋でパスタを茹で、ソースと絡めて盛りつける。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -761,17 +800,20 @@
         {
           "label": "準備",
           "text": "にんにくは薄切り、唐辛子は輪切りにする。パセリはみじん切りにしておく。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンにオリーブ油とにんにく・唐辛子を入れ、弱火で香りを出す。茹で上がったパスタと茹で汁を少し加え、全体を絡める。",
-          "timerMinutes": 12
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "塩で味を整え、パセリを散らして皿に盛る。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -814,17 +856,20 @@
         {
           "label": "準備",
           "text": "玉ねぎとピーマン、ウインナーは食べやすい大きさに切る。パスタは少し太めに茹でておく。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンでウインナーと野菜を炒め、ケチャップを加えて軽く煮詰める。パスタを入れて全体を炒め合わせる。",
-          "timerMinutes": 17
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "皿に盛り、好みで粉チーズをかける。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -867,17 +912,20 @@
         {
           "label": "準備",
           "text": "にんにくは薄切り、唐辛子は種を除いて輪切りにする。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンにオリーブ油とにんにくを入れ、弱火で色づく前に香りを出す。茹でたパスタと茹で汁を加え、軽く和える。",
-          "timerMinutes": 10
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "塩で味を調え、パセリを散らして完成。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -920,17 +968,20 @@
         {
           "label": "準備",
           "text": "ベーコンは1cm幅に切り、にんにくは薄切りにする。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンでベーコンとにんにくを炒め、トマト缶を加えて5分煮込む。生クリームを入れて軽く煮立たせる。",
-          "timerMinutes": 17
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "仕上げ",
           "text": "茹でたパスタを絡め、塩胡椒で味を整えて盛りつける。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -976,17 +1027,20 @@
         {
           "label": "準備",
           "text": "玉ねぎはみじん切りにしてレンジで2分加熱し、水気を切る。合いびき肉・パン粉・卵・塩胡椒を混ぜ、空気を抜きながら丸く成形する。",
-          "timerMinutes": 2
+          "timerMinutes": 2,
+          "timerSeconds": 120
         },
         {
           "label": "加熱",
           "text": "フライパンに油を熱し、中火で両面に焼き色をつける。弱火にして蓋をし、中まで火を通す。",
-          "timerMinutes": 25
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "ケチャップとウスターソースを合わせたソースを絡め、皿に盛る。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1028,17 +1082,20 @@
         {
           "label": "準備",
           "text": "鶏肉と玉ねぎを細かく切る。フライパンで炒め、ごはんとケチャップを加えてチキンライスを作る。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "別のフライパンで卵液を半熟の薄焼き卵にし、チキンライスを包む形で巻く。",
-          "timerMinutes": 22
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "皿にのせ、ケチャップで飾り切りを描く。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1084,17 +1141,20 @@
         {
           "label": "準備",
           "text": "鶏肉と野菜は一口大に切る。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "鍋で鶏肉と野菜を炒め、水400mlを加えて15分煮込む。ルウを溶き入れ、牛乳を加えてとろみをつける。",
-          "timerMinutes": 32
+          "timerMinutes": 15,
+          "timerSeconds": 900
         },
         {
           "label": "仕上げ",
           "text": "塩胡椒で味を整え、器に盛る。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1136,17 +1196,20 @@
         {
           "label": "準備",
           "text": "じゃがいもは薄切りにし、水にさらして水気を切る。ベーコンと玉ねぎは細かく切る。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "耐熱皿にじゃがいも・ベーコン・玉ねぎを重ね、牛乳を注ぎ、アルミホイルをしてオーブンまたはトースターで20分加熱する。",
-          "timerMinutes": 37
+          "timerMinutes": 20,
+          "timerSeconds": 1200
         },
         {
           "label": "仕上げ",
           "text": "チーズをのせてさらに焼き色がつくまで加熱し、完成。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "副菜",
@@ -1192,17 +1255,20 @@
         {
           "label": "準備",
           "text": "牛肉は一口大、野菜は大きめに切る。肉に小麦粉を薄くまぶす。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "鍋で肉をこんがり焼き、野菜を加えて炒める。赤ワインと水を入れ、弱火で60分煮込む。デミグラスソースを加えてとろみをつける。",
-          "timerMinutes": 82
+          "timerMinutes": 60,
+          "timerSeconds": 3600
         },
         {
           "label": "仕上げ",
           "text": "塩胡椒で味を整え、器に盛る。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1248,17 +1314,20 @@
         {
           "label": "準備",
           "text": "玉ねぎと合いびき肉を炒め、バターとケチャップで味付けしたライスを作る。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "耐熱皿にライスを敷き、ホワイトソースをかける。",
-          "timerMinutes": 25
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "チーズをのせてトースターで5分ほど焼き、焦げ目がついたら完成。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         }
       ],
       "categoryLabel": "主菜",
@@ -1304,17 +1373,20 @@
         {
           "label": "準備",
           "text": "じゃがいも・にんじんは一口大、玉ねぎはくし形に切る。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "鍋にだし・醤油・みりん・砂糖を入れ、野菜と肉を加えて弱火で20分煮る。",
-          "timerMinutes": 27
+          "timerMinutes": 20,
+          "timerSeconds": 1200
         },
         {
           "label": "仕上げ",
           "text": "汁気が少なくなったら火を止め、味をなじませる。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1356,17 +1428,20 @@
         {
           "label": "準備",
           "text": "味噌・みりん・酒・砂糖を混ぜて味噌ダレを作る。鮭の水気を拭き取る。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンに油を熱し、鮭を中火で皮目から焼く。裏返して火を通す。",
-          "timerMinutes": 12
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "味噌ダレを絡め、とろみがついたら完成。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1377,7 +1452,7 @@
       "id": "extra-15",
       "name": "卵焼き",
       "category": "side",
-      "timeMinutes": 18,
+      "timeMinutes": 15,
       "tags": [
         "和食"
       ],
@@ -1408,17 +1483,20 @@
         {
           "label": "準備",
           "text": "卵を溶き、だし・醤油・砂糖を加えて混ぜる。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "卵焼き用フライパンに油を薄く引き、卵液を何度か巻きながら焼く。",
-          "timerMinutes": 10
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "形を整えて冷まし、食べやすく切って盛る。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "副菜",
@@ -1460,17 +1538,20 @@
         {
           "label": "準備",
           "text": "豚肉の筋を切り、塩胡椒をする。小麦粉・溶き卵・パン粉の順に衣をつける。キャベツは千切りにする。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "170度の油で3〜4分揚げ、一度取り出して余熱で火を通す。",
-          "timerMinutes": 22
+          "timerMinutes": 4,
+          "timerSeconds": 240
         },
         {
           "label": "仕上げ",
           "text": "再び揚げてカラッとさせ、キャベツと一緒に盛る。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1512,17 +1593,20 @@
         {
           "label": "準備",
           "text": "キャベツは塩もみして水気を切り、にらと豚肉・醤油・ごま油を混ぜてタネを作る。皮に包む。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンに油を熱し、餃子を並べて焼き色をつける。水を加え蓋をして蒸し焼きにする。",
-          "timerMinutes": 32
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "水分が飛んだらごま油を回しかけ、パリッと仕上げる。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1564,17 +1648,20 @@
         {
           "label": "準備",
           "text": "キャベツはざっくり切り、豚肉は食べやすい大きさにする。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンで豚肉と野菜を炒め、蒸しそばを加えてほぐしながら炒める。",
-          "timerMinutes": 12
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "ソースを絡め、好みで紅生姜を添える。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1616,17 +1703,20 @@
         {
           "label": "準備",
           "text": "野菜と肉は一口大に切る。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "鍋で肉と野菜を炒め、水500mlを加えて柔らかくなるまで煮込む。ルウを溶き入れる。",
-          "timerMinutes": 37
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "ごはんを盛り、カレーをかけて完成。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1637,7 +1727,7 @@
       "id": "extra-20",
       "name": "チャーハン",
       "category": "main",
-      "timeMinutes": 18,
+      "timeMinutes": 15,
       "tags": [
         "和食"
       ],
@@ -1668,17 +1758,20 @@
         {
           "label": "準備",
           "text": "ハムと長ねぎは細かく切る。ごはんはほぐしておく。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンで卵を半熟に炒め、ごはんを加えてパラパラになるまで炒める。",
-          "timerMinutes": 10
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "ハム・ねぎ・醤油を加え、全体を炒め合わせる。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1724,17 +1817,20 @@
         {
           "label": "準備",
           "text": "鶏肉と野菜は食べやすい大きさに切る。れんこんは酢水にさらす。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "鍋にだし・調味料を入れ、材料を並べて落とし蓋をし、弱火で30分煮る。",
-          "timerMinutes": 32
+          "timerMinutes": 30,
+          "timerSeconds": 1800
         },
         {
           "label": "仕上げ",
           "text": "汁気が少なくなったら火を止め、味をなじませる。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1776,17 +1872,20 @@
         {
           "label": "準備",
           "text": "サバの水気を拭き取り、生姜は薄切りにする。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "鍋に酒・みりん・味噌・砂糖を入れて煮立て、サバを皮目を上にして入れる。落とし蓋をして中火で15分煮る。",
-          "timerMinutes": 22
+          "timerMinutes": 15,
+          "timerSeconds": 900
         },
         {
           "label": "仕上げ",
           "text": "汁をかけながら煮詰め、照りが出たら完成。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1828,17 +1927,20 @@
         {
           "label": "準備",
           "text": "大根は厚めのいちょう切りにし、米のとぎ汁で下茹でする。豚肉は食べやすい大きさに切る。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "鍋にだしと調味料を入れ、大根と肉を加えて弱火で25分煮る。",
-          "timerMinutes": 27
+          "timerMinutes": 25,
+          "timerSeconds": 1500
         },
         {
           "label": "仕上げ",
           "text": "汁気が半分になったら火を止める。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -1849,7 +1951,7 @@
       "id": "extra-24",
       "name": "なすの味噌炒め",
       "category": "side",
-      "timeMinutes": 18,
+      "timeMinutes": 15,
       "tags": [
         "和食"
       ],
@@ -1880,17 +1982,20 @@
         {
           "label": "準備",
           "text": "なすは乱切りにし、水にさらして水気を切る。味噌・みりん・砂糖を合わせる。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンにごま油を熱し、なすを炒める。",
-          "timerMinutes": 10
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "味噌ダレを加えて絡め、器に盛る。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "副菜",
@@ -1932,17 +2037,20 @@
         {
           "label": "準備",
           "text": "じゃがいもは茹でて潰し、きゅうりは薄切りにして塩もみする。ハムは細かく切る。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "じゃがいもが温かいうちにマヨネーズと酢を混ぜる。",
-          "timerMinutes": 17
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "きゅうりとハムを加え、塩胡椒で味を整える。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "副菜",
@@ -1953,7 +2061,7 @@
       "id": "extra-26",
       "name": "酢の物",
       "category": "side",
-      "timeMinutes": 18,
+      "timeMinutes": 10,
       "tags": [
         "和食"
       ],
@@ -1984,17 +2092,20 @@
         {
           "label": "準備",
           "text": "きゅうりは薄切りにし、塩もみして水気を切る。わかめは水で戻す。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "酢・砂糖・醤油を混ぜて甘酢を作る。",
-          "timerMinutes": 10
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "きゅうりとわかめを和え、冷やして盛る。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "副菜",
@@ -2005,7 +2116,7 @@
       "id": "extra-27",
       "name": "ブロッコリーの白和え",
       "category": "side",
-      "timeMinutes": 18,
+      "timeMinutes": 15,
       "tags": [
         "和食"
       ],
@@ -2036,17 +2147,20 @@
         {
           "label": "準備",
           "text": "ブロッコリーは小房に分け、豆腐は水切りして潰す。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "ブロッコリーを茹でて冷水にとる。",
-          "timerMinutes": 10
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "豆腐にすりごま・醤油・砂糖を混ぜ、ブロッコリーと和える。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "副菜",
@@ -2057,7 +2171,7 @@
       "id": "extra-28",
       "name": "わかめサラダ",
       "category": "side",
-      "timeMinutes": 18,
+      "timeMinutes": 10,
       "tags": [
         "和食"
       ],
@@ -2088,17 +2202,20 @@
         {
           "label": "準備",
           "text": "わかめは水で戻し、水気を切る。きゅうりは薄切りにする。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "酢・ごま油・醤油を混ぜてドレッシングを作る。",
-          "timerMinutes": 10
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "わかめときゅうりを和え、器に盛る。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "副菜",
@@ -2140,17 +2257,20 @@
         {
           "label": "準備",
           "text": "野菜は細切り、豆腐は角切りにする。ごぼうは水にさらす。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "だしで野菜を煮込み、柔らかくなったら豆腐を加える。",
-          "timerMinutes": 22
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "味噌を溶き入れ、ごま油を一滴回しかけて完成。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "汁物",
@@ -2161,7 +2281,7 @@
       "id": "extra-30",
       "name": "しじみの味噌汁",
       "category": "soup",
-      "timeMinutes": 18,
+      "timeMinutes": 15,
       "tags": [
         "和食"
       ],
@@ -2192,17 +2312,20 @@
         {
           "label": "準備",
           "text": "しじみは砂抜きし、豆腐は角切りにする。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "だしを温め、しじみと豆腐を加えてしじみが開くまで煮る。",
-          "timerMinutes": 10
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "味噌を溶き入れ、小ねぎを散らす。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "汁物",
@@ -2244,17 +2367,20 @@
         {
           "label": "準備",
           "text": "油揚げは湯通しして細切りにする。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "だしに醤油・みりんを加えて煮立て、油揚げを5分煮る。",
-          "timerMinutes": 12
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "仕上げ",
           "text": "別鍋でうどんを茹で、器に盛り、つゆをかける。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "汁物",
@@ -2296,17 +2422,20 @@
         {
           "label": "準備",
           "text": "米を洗い、水と調味料を加える。鶏肉と野菜は食べやすい大きさに切る。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "材料を炊飯器に入れ、通常の炊飯モードで炊く。",
-          "timerMinutes": 37
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "混ぜて蒸らし、器に盛る。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -2348,17 +2477,20 @@
         {
           "label": "準備",
           "text": "エビの背わたを取り、塩胡椒をする。小麦粉・卵・パン粉の順に衣をつける。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "170度の油で2〜3分揚げる。",
-          "timerMinutes": 17
+          "timerMinutes": 3,
+          "timerSeconds": 180
         },
         {
           "label": "仕上げ",
           "text": "キャベツを添え、タルタルソースをかけて盛る。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "主菜",
@@ -2400,17 +2532,20 @@
         {
           "label": "準備",
           "text": "じゃがいもを茹でて潰し、炒めた合いびき肉と玉ねぎを混ぜる。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "楕円形に成形し、小麦粉・卵・パン粉の順に衣をつける。",
-          "timerMinutes": 32
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "170度の油でこんがり揚げる。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "副菜",
@@ -2421,7 +2556,7 @@
       "id": "extra-35",
       "name": "冷奴",
       "category": "side",
-      "timeMinutes": 18,
+      "timeMinutes": 5,
       "tags": [
         "和食"
       ],
@@ -2448,17 +2583,20 @@
         {
           "label": "準備",
           "text": "豆腐は水切りして食べやすい大きさに切る。小ねぎと生姜はみじん切りにする。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "冷蔵庫で冷やしておく。",
-          "timerMinutes": 10
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "器に盛り、生姜と小ねぎをのせ、醤油をかける。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "副菜",
@@ -2500,17 +2638,20 @@
         {
           "label": "準備",
           "text": "卵を溶き、だしと混ぜて茶碗に8分目まで注ぐ。鶏肉・しいたけ・かまぼこを入れる。",
-          "timerMinutes": 8
+          "timerMinutes": 8,
+          "timerSeconds": 480
         },
         {
           "label": "加熱",
           "text": "茶碗にアルミホイルをし、蒸し器または湯せんで15分蒸す。",
-          "timerMinutes": 19
+          "timerMinutes": 15,
+          "timerSeconds": 900
         },
         {
           "label": "仕上げ",
           "text": "竹串を刺して透明な液が出なければ完成。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "副菜",
@@ -2521,7 +2662,7 @@
       "id": "extra-37",
       "name": "バター醤油コーン",
       "category": "side",
-      "timeMinutes": 18,
+      "timeMinutes": 10,
       "tags": [
         "和食"
       ],
@@ -2548,17 +2689,20 @@
         {
           "label": "準備",
           "text": "とうもろこしは粒を取り出す。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "フライパンでバターを溶かし、とうもろこしを炒める。",
-          "timerMinutes": 10
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "醤油を回しかけ、黒胡椒を振って完成。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "副菜",
@@ -2600,17 +2744,20 @@
         {
           "label": "準備",
           "text": "豆腐は水切りし、小麦粉を薄くまぶす。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "180度の油で表面がきつね色になるまで揚げる。",
-          "timerMinutes": 12
+          "timerMinutes": 10,
+          "timerSeconds": 600
         },
         {
           "label": "仕上げ",
           "text": "器に盛り、温めただしと醤油をかけ、小ねぎを散らす。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "副菜",
@@ -2652,17 +2799,20 @@
         {
           "label": "準備",
           "text": "きのこ類は石づきを取り、食べやすい大きさにする。",
-          "timerMinutes": 5
+          "timerMinutes": 5,
+          "timerSeconds": 300
         },
         {
           "label": "加熱",
           "text": "だしに醤油・みりんを加えて煮立て、きのこを加えて2分煮る。",
-          "timerMinutes": 12
+          "timerMinutes": 2,
+          "timerSeconds": 120
         },
         {
           "label": "仕上げ",
           "text": "別鍋でそばを茹で、器に盛り、つゆをかける。",
-          "timerMinutes": 3
+          "timerMinutes": 3,
+          "timerSeconds": 180
         }
       ],
       "categoryLabel": "汁物",
