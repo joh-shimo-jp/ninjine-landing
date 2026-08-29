@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>公式レシピ — ご飯だよ！</title>
-  <meta name="description" content="ご飯だよ！公式レシピ一覧。共有シートからアプリへ取り込めます。">
+  <meta name="description" content="ご飯だよ！公式レシピ一覧。キーワード検索・共有シートからアプリへ取り込めます。">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,73 +12,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
-      background: #FAFAF8;
-      color: #2A2A2A;
-      line-height: 1.75;
-      min-height: 100vh;
+    body { font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif; background: #FAFAF8; color: #2A2A2A; line-height: 1.75; min-height: 100vh; }
+    main { max-width: 640px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    .eyebrow { font-size: 0.72rem; letter-spacing: 0.12em; color: #8B7355; text-transform: uppercase; margin-bottom: 0.5rem; }
+    h1 { font-size: 1.6rem; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .lead { color: #6A6A6A; font-size: 0.95rem; margin-bottom: 1.25rem; }
+    .search-wrap { margin-bottom: 1.25rem; }
+    .search-wrap label { display: block; font-size: 0.82rem; color: #6A6A6A; margin-bottom: 0.35rem; }
+    .search-wrap input {
+      width: 100%; padding: 0.75rem 1rem; font-size: 1rem; font-family: inherit;
+      border: 1px solid #DDDBD5; border-radius: 8px; background: #fff;
     }
-    main {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 2.5rem 1.25rem 4rem;
-    }
-    .eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      color: #8B7355;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-    h1 {
-      font-size: 1.6rem;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.5rem;
-    }
-    .lead {
-      color: #6A6A6A;
-      font-size: 0.95rem;
-      margin-bottom: 1.75rem;
-    }
-    .list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
+    .search-wrap input:focus { outline: 2px solid #8B7355; outline-offset: 1px; }
+    .count { font-size: 0.82rem; color: #9A9A9A; margin-bottom: 0.75rem; }
+    .list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
     .list a {
-      display: block;
-      padding: 1.1rem 1.25rem;
-      background: #fff;
-      border: 1px solid #DDDBD5;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #2A2A2A;
-      transition: background 0.15s;
+      display: block; padding: 1.1rem 1.25rem; background: #fff;
+      border: 1px solid #DDDBD5; border-radius: 8px; text-decoration: none;
+      color: #2A2A2A; transition: background 0.15s;
     }
     .list a:hover { background: #F7F4EE; }
-    .list .name {
-      font-size: 1.05rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-    .list .meta {
-      margin-top: 0.25rem;
-      font-size: 0.82rem;
-      color: #6A6A6A;
-    }
-    .note {
-      margin-top: 1.5rem;
-      font-size: 0.8rem;
-      color: #9A9A9A;
-    }
-    footer {
-      margin-top: 2.5rem;
-      font-size: 0.78rem;
-      color: #6A6A6A;
-      text-align: center;
-    }
+    .list .name { font-size: 1.05rem; font-weight: 600; letter-spacing: 0.04em; }
+    .list .meta { margin-top: 0.25rem; font-size: 0.82rem; color: #6A6A6A; }
+    .empty { padding: 2rem 1rem; text-align: center; color: #9A9A9A; font-size: 0.92rem; }
+    .note { margin-top: 1.5rem; font-size: 0.8rem; color: #9A9A9A; }
+    footer { margin-top: 2.5rem; font-size: 0.78rem; color: #6A6A6A; text-align: center; }
     footer a { color: #4A3728; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
   </style>
@@ -88,22 +46,71 @@
     <p class="eyebrow">Official recipes</p>
     <h1>公式レシピ</h1>
     <p class="lead">各レシピページから、共有シート経由で「ご飯だよ！」へ取り込めます。</p>
-
-    <ul class="list">
-      <li>
-        <a href="tori-teriyaki/">
-          <p class="name">鶏の照り焼き</p>
-          <p class="meta">主菜 · 約20分 · 2人分</p>
-        </a>
-      </li>
-    </ul>
-
+    <div class="search-wrap">
+      <label for="recipe-search">レシピを検索</label>
+      <input type="search" id="recipe-search" placeholder="料理名・食材・タグ（例: 鶏、パスタ、味噌）" autocomplete="off">
+    </div>
+    <p class="count" id="result-count" aria-live="polite"></p>
+    <ul class="list" id="recipe-list"></ul>
+    <p class="empty" id="empty-msg" hidden>該当するレシピがありません。</p>
     <p class="note">※ 「ご飯だよ！に送る」からアプリへ取り込めます。レシピは随時追加します。</p>
-
     <footer>
       <p><a href="../">← ご飯だよ！LP</a></p>
       <p>© 2026 NINJINE — ご飯だよ！</p>
     </footer>
   </main>
+  <script>
+    (function () {
+      var listEl = document.getElementById('recipe-list');
+      var countEl = document.getElementById('result-count');
+      var emptyEl = document.getElementById('empty-msg');
+      var input = document.getElementById('recipe-search');
+      var all = [];
+
+      function categoryLabel(c) {
+        return { main: '主菜', side: '副菜', soup: '汁物' }[c] || c;
+      }
+
+      function render(items) {
+        listEl.innerHTML = '';
+        items.forEach(function (r) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = r.slug + '/';
+          var tags = (r.tags || []).join(' / ');
+          a.innerHTML = '<p class="name">' + r.name + '</p><p class="meta">' +
+            categoryLabel(r.category) + ' · 約' + r.timeMinutes + '分 · ' + r.servings + '人分' +
+            (tags ? ' · ' + tags : '') + '</p>';
+          li.appendChild(a);
+          listEl.appendChild(li);
+        });
+        countEl.textContent = items.length + '件 / 全' + all.length + '件';
+        emptyEl.hidden = items.length > 0;
+      }
+
+      function filter(q) {
+        var needle = (q || '').trim().toLowerCase();
+        if (!needle) return render(all);
+        var tokens = needle.split(/\s+/).filter(Boolean);
+        render(all.filter(function (r) {
+          var hay = (r.searchKeywords || r.name).toLowerCase();
+          return tokens.every(function (t) { return hay.indexOf(t) !== -1; });
+        }));
+      }
+
+      fetch('catalog.json')
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          all = data.recipes || [];
+          all.sort(function (a, b) { return a.name.localeCompare(b.name, 'ja'); });
+          render(all);
+        })
+        .catch(function () {
+          countEl.textContent = '一覧の読み込みに失敗しました。';
+        });
+
+      input.addEventListener('input', function () { filter(input.value); });
+    })();
+  </script>
 </body>
 </html>
