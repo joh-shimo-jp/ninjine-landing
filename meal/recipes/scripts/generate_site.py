@@ -220,9 +220,7 @@ def render_detail(recipe: dict) -> str:
     .status {{ min-height: 1.25rem; margin-top: 0.5rem; font-size: 0.82rem; color: #6A6A6A; text-align: center; }}
     .status.is-ok {{ color: #3D6B4F; }}
     .status.is-err {{ color: #8B3A3A; }}
-    details.share-raw {{ margin-top: 1.25rem; font-size: 0.82rem; color: #6A6A6A; }}
-    details.share-raw summary {{ cursor: pointer; color: #4A3728; }}
-    pre.share-text {{ margin-top: 0.65rem; padding: 0.9rem 1rem; background: #F7F4EE; border: 1px solid #DDDBD5; border-radius: 6px; white-space: pre-wrap; word-break: break-word; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; color: #2A2A2A; line-height: 1.55; }}
+    pre.share-text {{ display: none; }}
     footer {{ margin-top: 2.5rem; font-size: 0.78rem; color: #6A6A6A; text-align: center; }}
     footer a {{ color: #4A3728; text-decoration: none; }}
     footer a:hover {{ text-decoration: underline; }}
@@ -267,10 +265,6 @@ def render_detail(recipe: dict) -> str:
       <p class="status" id="share-status" role="status" aria-live="polite"></p>
     </section>
     <pre class="share-text" id="meal-share-text" hidden>{share}</pre>
-    <details class="share-raw">
-      <summary>共有テキストを表示（デバッグ用）</summary>
-      <pre class="share-text" id="meal-share-text-visible"></pre>
-    </details>
     <footer>
       <p><a href="../">← 公式レシピ一覧</a> · <a href="../../">ご飯だよ！LP</a></p>
       <p>© 2026 NINJINE — ご飯だよ！</p>
@@ -279,10 +273,8 @@ def render_detail(recipe: dict) -> str:
   <script>
     (function () {{
       var source = document.getElementById('meal-share-text');
-      var visible = document.getElementById('meal-share-text-visible');
       var statusEl = document.getElementById('share-status');
       var text = (source.textContent || '').replace(/^\\n+/, '').replace(/\\n+$/, '') + '\\n';
-      if (visible) visible.textContent = text;
       function setStatus(msg, ok) {{
         statusEl.textContent = msg || '';
         statusEl.classList.remove('is-ok', 'is-err');
