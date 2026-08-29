@@ -93,9 +93,11 @@ def step_label_html(step: dict) -> str:
 
 
 def step_share_text(step: dict) -> str:
-    # M-IMPORT-01: `- 分類 | 内容` only. Recipe-level 所要時間 is `調理時間:`.
-    # Step minutes are web UI only (アプリの手順タイマーは現行フォーマット非対応).
-    return f"- {step['label']} | {step['text']}"
+    # M-IMPORT-01: `- 分類 | 所要時間 | 内容`
+    # 所要時間 → アプリ手順ダイアログのタイマー（timerSeconds）
+    mins = step_minutes(step)
+    duration = f"{mins}分" if mins is not None else "-"
+    return f"- {step['label']} | {duration} | {step['text']}"
 
 
 def meal_share_text(recipe: dict) -> str:
