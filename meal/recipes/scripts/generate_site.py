@@ -60,19 +60,51 @@ def enrich_step_times(steps: list[dict]) -> list[dict]:
     out: list[dict] = []
     for raw in steps:
         step = dict(raw)
-        if step_minutes(step) is None:
+        mins = step_minutes(step)
+        if mins is None:
             text = step.get("text", "")
             match = re.search(r"(\d+)\s*分", text)
             if match:
                 snippet = text[match.start() : match.end() + 2]
                 if "短" not in snippet and "早" not in snippet:
-                    step["timerMinutes"] = int(match.group(1))
-            if step_minutes(step) is None:
-                default = DEFAULT_STEP_MINUTES.get(step.get("label", ""))
-                if default is not None:
-                    step["timerMinutes"] = default
+                    mins = int(match.group(1))
+            if mins is None:
+                mins = DEFAULT_STEP_MINUTES.get(step.get("label", ""))
+        if mins is not None:
+            step["timerMinutes"] = int(mins)
+            step.pop("timerSeconds", None)
         out.append(step)
     return out
+
+
+def align_total_time(recipe: dict) -> dict:
+    """Make recipe.timeMinutes equal the sum of step times.
+
+    If the declared total is longer than the step sum, put the remainder on
+    the 加熱 step (or the longest step). If shorter, raise the total to the sum.
+    """
+    steps = [dict(s) for s in recipe["steps"]]
+    step_sum = sum(step_minutes(s) or 0 for s in steps)
+    declared = int(recipe.get("timeMinutes") or 0)
+
+    if step_sum <= 0:
+        recipe["steps"] = steps
+        return recipe
+
+    if declared > step_sum:
+        remainder = declared - step_sum
+        target_idx = next(
+            (i for i, s in enumerate(steps) if s.get("label") == "加熱"),
+            max(range(len(steps)), key=lambda i: step_minutes(steps[i]) or 0),
+        )
+        base = step_minutes(steps[target_idx]) or 0
+        steps[target_idx]["timerMinutes"] = base + remainder
+        steps[target_idx].pop("timerSeconds", None)
+        step_sum = declared
+
+    recipe["steps"] = steps
+    recipe["timeMinutes"] = step_sum
+    return recipe
 
 
 def step_label_html(step: dict) -> str:
@@ -124,7 +156,7 @@ def normalize_template_entry(entry: dict, slug: str) -> dict:
         if s.get("timerSeconds") is not None:
             step["timerSeconds"] = s["timerSeconds"]
         steps.append(step)
-    return {
+    recipe = {
         "slug": slug,
         "id": entry["id"],
         "name": entry["name"],
@@ -136,6 +168,7 @@ def normalize_template_entry(entry: dict, slug: str) -> dict:
         "ingredients": entry["ingredients"],
         "steps": enrich_step_times(steps),
     }
+    return align_total_time(recipe)
 
 
 def build_catalog() -> list[dict]:
@@ -148,10 +181,12 @@ def build_catalog() -> list[dict]:
         recipes.append(r)
 
     for entry in EXTRA_RECIPES:
-        entry["categoryLabel"] = CATEGORY_LABEL[entry["category"]]
-        entry["steps"] = enrich_step_times(entry["steps"])
-        entry["searchKeywords"] = search_keywords(entry)
-        recipes.append(entry)
+        recipe = dict(entry)
+        recipe["categoryLabel"] = CATEGORY_LABEL[recipe["category"]]
+        recipe["steps"] = enrich_step_times(recipe["steps"])
+        recipe = align_total_time(recipe)
+        recipe["searchKeywords"] = search_keywords(recipe)
+        recipes.append(recipe)
 
     if len(recipes) != 50:
         raise SystemExit(f"Expected 50 recipes, got {len(recipes)}")
