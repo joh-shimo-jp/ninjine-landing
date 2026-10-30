@@ -60,6 +60,77 @@
     .section p { color: #4A4A4A; font-size: 0.95rem; }
     .section p + p { margin-top: 0.75rem; }
 
+    /* How to use — ESHINE風ステップ＋画像（meal/index.html の構造を踏襲） */
+    .workflow {
+      list-style: none;
+      margin-top: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .step {
+      margin: 0;
+    }
+    .step-header {
+      display: grid;
+      grid-template-columns: 1.75rem 1fr;
+      gap: 0.65rem;
+      align-items: start;
+    }
+    .step .n {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      border: 1px solid #8B7355;
+      color: #8B7355;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      margin-top: 0.15rem;
+    }
+    .step-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2A2A2A;
+      margin-bottom: 0.25rem;
+    }
+    .step-desc {
+      font-size: 0.9rem;
+      color: #4A4A4A;
+    }
+    .step-visual {
+      margin: 0.85rem 0 0 2.4rem;
+      text-align: center;
+    }
+    .step-visual img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+      background: #F0EDE5;
+    }
+    .step-visual figcaption {
+      margin-top: 0.45rem;
+      font-size: 0.72rem;
+      color: #6A6A6A;
+    }
+    .step-connector {
+      width: 1px;
+      height: 1.25rem;
+      background: #DDDBD5;
+      margin: 0.65rem 0 0.65rem 0.7rem;
+    }
+
+    @media (max-width: 520px) {
+      .step-visual { margin-left: 0; }
+      .step-visual img { max-width: 220px; }
+    }
+
     .values { list-style: none; }
     .values li { margin: 0.55rem 0; color: #4A4A4A; font-size: 0.95rem; }
     .values li::before { content: "— "; color: #8B7355; }
@@ -126,6 +197,60 @@
       <p>
         画面をロックしたままでもバックグラウンドで再生が続くため、就寝前や作業中にも使いやすい設計です。
       </p>
+    </section>
+
+    <section class="section" aria-labelledby="howto-title">
+      <p class="section-label">How to use</p>
+      <h2 id="howto-title">使い方</h2>
+      <div class="workflow" role="list">
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">1</span>
+            <div>
+              <p class="step-name">プリセットを選ぶ</p>
+              <p class="step-desc">目的別プリセットから選びます。無料4種に加え、購入で追加7種を解放できます。</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="assets/screenshots/home.png" width="1206" height="2622" alt="ホーム画面（プリセット一覧）">
+            <figcaption>ホーム</figcaption>
+          </figure>
+        </article>
+
+        <div class="step-connector" aria-hidden="true"></div>
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">2</span>
+            <div>
+              <p class="step-name">セッションを再生する</p>
+              <p class="step-desc">導入・深化・暗示・覚醒の4段階で、時間経過とともに周波数が変化します。</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="assets/screenshots/session.png" width="1206" height="2622" alt="セッション再生画面">
+            <figcaption>再生中</figcaption>
+          </figure>
+        </article>
+
+        <div class="step-connector" aria-hidden="true"></div>
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">3</span>
+            <div>
+              <p class="step-name">わたしの言葉を書く</p>
+              <p class="step-desc">プリセットごとに自分の言葉（アファメーション）を書き留められます。暗示の段階で、この言葉が画面に表示されます。</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="assets/screenshots/my-words.png" width="1206" height="2622" alt="わたしの言葉カード（プリセット詳細画面）">
+            <figcaption>わたしの言葉</figcaption>
+          </figure>
+        </article>
+
+      </div>
     </section>
 
     <section class="section" aria-labelledby="features-title">
