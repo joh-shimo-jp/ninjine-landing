@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スポットーク — Spotalk Map</title>
+  <meta name="description" content="スポットーク（Spotalk Map）は、地図上のスポットにコメントを残し合える伝言板アプリです。非公開・グループ・公開の3段階の可視性と、仲間とのグループ共有に対応。NINJINE 開発。">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+      background: #FAFAF8;
+      color: #2A2A2A;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+      text-align: center;
+    }
+    .lang-bar {
+      text-align: right;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+    .lang-bar a { color: #8B7355; text-decoration: none; }
+    .lang-bar a:hover { text-decoration: underline; }
+
+    .icon {
+      width: 112px;
+      height: 112px;
+      margin: 0 auto 1.25rem;
+      display: block;
+      border-radius: 24px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+    }
+    h1 { font-size: 1.9rem; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .tagline { color: #6A6A6A; font-size: 0.95rem; margin-bottom: 2rem; }
+
+    .section {
+      text-align: left;
+      margin: 2.25rem 0;
+      padding: 1.4rem 1.4rem 1.5rem;
+      background: #fff;
+      border: 1px solid #DDDBD5;
+      border-radius: 8px;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: #8B7355;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+    .section h2 {
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    .section p { color: #4A4A4A; font-size: 0.95rem; }
+    .section p + p { margin-top: 0.75rem; }
+
+    /* How to use — ステップ＋画像（kotodama/index.html の構造を踏襲） */
+    .workflow {
+      list-style: none;
+      margin-top: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .step { margin: 0; }
+    .step-header {
+      display: grid;
+      grid-template-columns: 1.75rem 1fr;
+      gap: 0.65rem;
+      align-items: start;
+    }
+    .step .n {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      border: 1px solid #8B7355;
+      color: #8B7355;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      margin-top: 0.15rem;
+    }
+    .step-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2A2A2A;
+      margin-bottom: 0.25rem;
+    }
+    .step-desc { font-size: 0.9rem; color: #4A4A4A; }
+    .step-visual { margin: 0.85rem 0 0 2.4rem; text-align: center; }
+    .step-visual img {
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+      background: #F0EDE5;
+    }
+    .step-visual figcaption {
+      margin-top: 0.45rem;
+      font-size: 0.72rem;
+      color: #6A6A6A;
+    }
+    .step-connector {
+      width: 1px;
+      height: 1.25rem;
+      background: #DDDBD5;
+      margin: 0.65rem 0 0.65rem 0.7rem;
+    }
+
+    @media (max-width: 520px) {
+      .step-visual { margin-left: 0; }
+      .step-visual img { max-width: 200px; }
+    }
+
+    .values { list-style: none; }
+    .values li { margin: 0.55rem 0; color: #4A4A4A; font-size: 0.95rem; }
+    .values li::before { content: "— "; color: #8B7355; }
+
+    .plan-note { margin-top: 0.85rem; font-size: 0.78rem; color: #9A9A9A; }
+
+    .cta { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.25rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 1px solid #2A2A2A;
+      color: #2A2A2A;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: #F0EDE5; }
+
+    footer { margin-top: 3rem; font-size: 0.78rem; color: #6A6A6A; }
+    footer a { color: #4A3728; }
+    .back-link { display: inline-block; margin-top: 0.75rem; font-size: 0.8rem; color: #6A6A6A; text-decoration: none; }
+    .back-link:hover { color: #4A3728; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="lang-bar"><a href="en/">English</a></div>
+
+    <img class="icon" src="assets/app_icon_1024.png" width="112" height="112" alt="スポットーク アイコン">
+
+    <h1>スポットーク</h1>
+    <p class="tagline">Spotalk Map — 地図の上に、その場所の声を残す。</p>
+
+    <section class="section" aria-labelledby="about-title">
+      <p class="section-label">About</p>
+      <h2 id="about-title">こんなアプリです</h2>
+      <p>
+        スポットーク（Spotalk Map）は、地図上のスポット（場所）にコメントを残し合える、駅の伝言板のようなアプリです。
+        気づいたこと・待ち合わせメモ・その場所の様子を、ピンに紐づけて短く書き留められます。
+      </p>
+      <p>
+        投稿の公開範囲は非公開・グループ・公開の3段階から選べます（既定は非公開）。グループ機能を使えば、気の合う仲間だけでスポットやコメントを共有することもできます。
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="howto-title">
+      <p class="section-label">How to use</p>
+      <h2 id="howto-title">使い方</h2>
+      <div class="workflow" role="list">
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">1</span>
+            <div>
+              <p class="step-name">地図でスポットを見る</p>
+              <p class="step-desc">地図上のピンとコメント数チップから、周囲のスポットとコメントの吹き出しをひと目で確認できます。</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="assets/screenshots/map-home.png" width="689" height="1500" alt="マップホーム画面（スポットのピンとコメントの吹き出し表示）">
+            <figcaption>マップホーム</figcaption>
+          </figure>
+        </article>
+
+        <div class="step-connector" aria-hidden="true"></div>
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">2</span>
+            <div>
+              <p class="step-name">コメントを読む・書く</p>
+              <p class="step-desc">選んだスポットのコメント一覧を表示し、非公開・グループ・公開を切り替えながら書き込めます。</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="assets/screenshots/spot-detail.png" width="689" height="1500" alt="スポット詳細・コメント表示画面">
+            <figcaption>スポット詳細</figcaption>
+          </figure>
+        </article>
+
+        <div class="step-connector" aria-hidden="true"></div>
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">3</span>
+            <div>
+              <p class="step-name">グループで共有する</p>
+              <p class="step-desc">スポットをグループに追加し、メンバーを招待して仲間内だけでコメントを共有できます。</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="assets/screenshots/group-share.png" width="689" height="1500" alt="グループ共有・メンバー管理画面">
+            <figcaption>グループ共有</figcaption>
+          </figure>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="features-title">
+      <p class="section-label">Features</p>
+      <h2 id="features-title">できること</h2>
+      <ul class="values">
+        <li>地図上のスポット単位でコメントを投稿・閲覧</li>
+        <li>可視性3段階（非公開・グループ・公開、既定は非公開）</li>
+        <li>グループ機能で仲間とスポット・コメントを共有（iCloudベース）</li>
+        <li>経路（ルート）をグループで共有</li>
+        <li>NINJINE が開発するプロダクトの一つ</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="pricing-title">
+      <p class="section-label">Pricing</p>
+      <h2 id="pricing-title">料金について</h2>
+      <p>
+        本アプリは無料でご利用いただけます。Google AdMob による広告（非パーソナライズ配信・バナーのみ）を表示します。パーソナライズ広告のための識別子は収集しません。
+      </p>
+      <p class="plan-note">※ 現時点でアプリ内購入（IAP）は実装していません。</p>
+    </section>
+
+    <div class="cta">
+      <a class="btn" href="mailto:joh.shimo.jp@gmail.com?subject=%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88%E3%83%BC%E3%82%AF%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">お問い合わせ（Support）</a>
+    </div>
+
+    <footer>
+      <p>© 2026 NINJINE — スポットーク</p>
+      <p>Support: <a href="mailto:joh.shimo.jp@gmail.com">joh.shimo.jp@gmail.com</a></p>
+      <p><a href="privacy/">プライバシーポリシー</a> ・ <a href="terms/">利用規約</a></p>
+      <a class="back-link" href="../">← NINJINE トップへ戻る</a>
+    </footer>
+  </main>
+</body>
+</html>

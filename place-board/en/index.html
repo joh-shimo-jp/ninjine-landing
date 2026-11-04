@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotalk Map — スポットーク</title>
+  <meta name="description" content="Spotalk Map is a location-based bulletin board app where you can leave and read comments pinned to spots on a map. Supports 3-level visibility (private, group, public) and group sharing with friends. Built by NINJINE.">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Serif JP', Georgia, 'Times New Roman', serif;
+      background: #FAFAF8;
+      color: #2A2A2A;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+      text-align: center;
+    }
+    .lang-bar {
+      text-align: right;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+    .lang-bar a { color: #8B7355; text-decoration: none; }
+    .lang-bar a:hover { text-decoration: underline; }
+
+    .icon {
+      width: 112px;
+      height: 112px;
+      margin: 0 auto 1.25rem;
+      display: block;
+      border-radius: 24px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+    }
+    h1 { font-size: 1.9rem; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+    .tagline { color: #6A6A6A; font-size: 0.95rem; margin-bottom: 2rem; }
+
+    .section {
+      text-align: left;
+      margin: 2.25rem 0;
+      padding: 1.4rem 1.4rem 1.5rem;
+      background: #fff;
+      border: 1px solid #DDDBD5;
+      border-radius: 8px;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: #8B7355;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+    .section h2 {
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    .section p { color: #4A4A4A; font-size: 0.95rem; }
+    .section p + p { margin-top: 0.75rem; }
+
+    /* How to use — step + screenshot (mirrors kotodama/index.html structure) */
+    .workflow {
+      list-style: none;
+      margin-top: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .step { margin: 0; }
+    .step-header {
+      display: grid;
+      grid-template-columns: 1.75rem 1fr;
+      gap: 0.65rem;
+      align-items: start;
+    }
+    .step .n {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      border: 1px solid #8B7355;
+      color: #8B7355;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      margin-top: 0.15rem;
+    }
+    .step-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2A2A2A;
+      margin-bottom: 0.25rem;
+    }
+    .step-desc { font-size: 0.9rem; color: #4A4A4A; }
+    .step-visual { margin: 0.85rem 0 0 2.4rem; text-align: center; }
+    .step-visual img {
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+      background: #F0EDE5;
+    }
+    .step-visual figcaption {
+      margin-top: 0.45rem;
+      font-size: 0.72rem;
+      color: #6A6A6A;
+    }
+    .step-connector {
+      width: 1px;
+      height: 1.25rem;
+      background: #DDDBD5;
+      margin: 0.65rem 0 0.65rem 0.7rem;
+    }
+
+    @media (max-width: 520px) {
+      .step-visual { margin-left: 0; }
+      .step-visual img { max-width: 200px; }
+    }
+
+    .values { list-style: none; }
+    .values li { margin: 0.55rem 0; color: #4A4A4A; font-size: 0.95rem; }
+    .values li::before { content: "— "; color: #8B7355; }
+
+    .plan-note { margin-top: 0.85rem; font-size: 0.78rem; color: #9A9A9A; }
+
+    .cta { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.25rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 1px solid #2A2A2A;
+      color: #2A2A2A;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: #F0EDE5; }
+
+    footer { margin-top: 3rem; font-size: 0.78rem; color: #6A6A6A; }
+    footer a { color: #4A3728; }
+    .back-link { display: inline-block; margin-top: 0.75rem; font-size: 0.8rem; color: #6A6A6A; text-decoration: none; }
+    .back-link:hover { color: #4A3728; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="lang-bar"><a href="../">日本語</a></div>
+
+    <img class="icon" src="../assets/app_icon_1024.png" width="112" height="112" alt="Spotalk Map icon">
+
+    <h1>Spotalk Map</h1>
+    <p class="tagline">スポットーク — Leave the voice of a place, right on the map.</p>
+
+    <section class="section" aria-labelledby="about-title">
+      <p class="section-label">About</p>
+      <h2 id="about-title">What is this app?</h2>
+      <p>
+        Spotalk Map is a location-based bulletin board — like a note left at a station — where you can attach short comments
+        to spots on a map. Jot down something you noticed, a meetup note, or what a place is like right now.
+      </p>
+      <p>
+        Each comment can be set to one of three visibility levels: private, group, or public (private by default).
+        With the group feature, you can share spots and comments with just the friends you choose.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="howto-title">
+      <p class="section-label">How to use</p>
+      <h2 id="howto-title">How it works</h2>
+      <div class="workflow" role="list">
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">1</span>
+            <div>
+              <p class="step-name">Browse spots on the map</p>
+              <p class="step-desc">Pins and comment-count chips show nearby spots at a glance, with speech-bubble previews of their comments.</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="../assets/screenshots/map-home.png" width="689" height="1500" alt="Map home screen with spot pins and comment bubbles">
+            <figcaption>Map home</figcaption>
+          </figure>
+        </article>
+
+        <div class="step-connector" aria-hidden="true"></div>
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">2</span>
+            <div>
+              <p class="step-name">Read and write comments</p>
+              <p class="step-desc">View a spot's comment list and post your own, switching between private, group, and public visibility.</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="../assets/screenshots/spot-detail.png" width="689" height="1500" alt="Spot detail and comment view">
+            <figcaption>Spot detail</figcaption>
+          </figure>
+        </article>
+
+        <div class="step-connector" aria-hidden="true"></div>
+
+        <article class="step" role="listitem">
+          <div class="step-header">
+            <span class="n" aria-hidden="true">3</span>
+            <div>
+              <p class="step-name">Share with a group</p>
+              <p class="step-desc">Add a spot to a group and invite members so your circle can share comments together.</p>
+            </div>
+          </div>
+          <figure class="step-visual">
+            <img src="../assets/screenshots/group-share.png" width="689" height="1500" alt="Group sharing and member management screen">
+            <figcaption>Group sharing</figcaption>
+          </figure>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="features-title">
+      <p class="section-label">Features</p>
+      <h2 id="features-title">What you can do</h2>
+      <ul class="values">
+        <li>Post and read comments attached to individual spots on the map</li>
+        <li>3-level visibility (private, group, public — private by default)</li>
+        <li>Share spots and comments with friends via groups (iCloud-based)</li>
+        <li>Share routes with a group</li>
+        <li>One of the products built by NINJINE</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="pricing-title">
+      <p class="section-label">Pricing</p>
+      <h2 id="pricing-title">Pricing</h2>
+      <p>
+        The app is free to use. It displays ads via Google AdMob (non-personalized, banner only).
+        We do not collect identifiers used for personalized advertising.
+      </p>
+      <p class="plan-note">※ In-app purchases (IAP) are not implemented at this time.</p>
+    </section>
+
+    <div class="cta">
+      <a class="btn" href="mailto:joh.shimo.jp@gmail.com?subject=Spotalk%20Map%20Inquiry">Contact (Support)</a>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 NINJINE — Spotalk Map</p>
+      <p>Support: <a href="mailto:joh.shimo.jp@gmail.com">joh.shimo.jp@gmail.com</a></p>
+      <p><a href="../privacy/en/">Privacy Policy</a> &middot; <a href="../terms/en/">Terms of Service</a></p>
+      <a class="back-link" href="../../">&larr; Back to NINJINE Top</a>
+    </footer>
+  </main>
+</body>
+</html>
